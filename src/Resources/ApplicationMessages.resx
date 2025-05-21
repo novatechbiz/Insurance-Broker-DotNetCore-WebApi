@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UserNotFoundMessage" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="DeleteUserFailureMessage" xml:space="preserve">
+    <value>Failed to delete the user with ID {0}</value>
+  </data>
+  <data name="UserUpdateFailureMessage" xml:space="preserve">
+    <value>An error occurred while updating the user with ID {0}</value>
+  </data>
+  <data name="IdMismatchMessage" xml:space="preserve">
+    <value>ID mismatch</value>
+  </data>
+  <data name="UserRetrievalFailureMessage" xml:space="preserve">
+    <value>Failed to retrieve users. See inner exception for details</value>
+  </data>
+  <data name="UserRetrievalFailureWithIdMessage" xml:space="preserve">
+    <value>Failed to retrieve user with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="UserAdditionFailureMessage" xml:space="preserve">
+    <value>Failed to add the user</value>
+  </data>
+  <data name="UserEmailLookupFailureMessage" xml:space="preserve">
+    <value>Failed to find the user by email</value>
+  </data>
+  <data name="PasswordVerificationFailureMessage" xml:space="preserve">
+    <value>Password verification failed</value>
+  </data>
+  <data name="UserRetrievalFailureByEmailMessage" xml:space="preserve">
+    <value>Failed to retrieve user with email {0}. See inner exception for details</value>
+  </data>
+  <data name="UserFindFailureMessage" xml:space="preserve">
+    <value>Failed to find the user. See inner exception for details</value>
+  </data>
+  <data name="EntityListRetrievalFailureMessage" xml:space="preserve">
+    <value>Failed to retrieve the list of entities. See inner exception for details</value>
+  </data>
+  <data name="EntityRetrievalFailureByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve entity with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="EntityAdditionFailureMessage" xml:space="preserve">
+    <value>Failed to add the entity. See inner exception for details</value>
+  </data>
+  <data name="EntityUpdateFailureMessage" xml:space="preserve">
+    <value>Failed to update the entity. See inner exception for details</value>
+  </data>
+  <data name="EntityDeletionFailureByIdMessage" xml:space="preserve">
+    <value>Failed to delete the entity with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="EntityRelatedDataRetrievalFailureMessage" xml:space="preserve">
+    <value>Failed to retrieve entity with related data for ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCompaniesMessage" xml:space="preserve">
+    <value>Failed to retrieve companies. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCompanyByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve company with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddCompanyMessage" xml:space="preserve">
+    <value>Failed to add the company. See inner exception for details</value>
+  </data>
+  <data name="CompanyNotFoundMessage" xml:space="preserve">
+    <value>Company not found</value>
+  </data>
+  <data name="FailedToUpdateCompanyMessage" xml:space="preserve">
+    <value>Failed to update the company. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCompanyMessage" xml:space="preserve">
+    <value>Failed to delete the company. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentsMessage" xml:space="preserve">
+    <value>Failed to retrieve contents. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentMessage" xml:space="preserve">
+    <value>Failed to retrieve content with ID {id}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddContentMessage" xml:space="preserve">
+    <value>Failed to add the content. See inner exception for details</value>
+  </data>
+  <data name="ContentNotFoundMessage" xml:space="preserve">
+    <value>Content not found</value>
+  </data>
+  <data name="FailedToUpdateContentMessage" xml:space="preserve">
+    <value>Failed to update the content. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteContentMessage" xml:space="preserve">
+    <value>Failed to delete the content. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentTasksMessage" xml:space="preserve">
+    <value>Failed to retrieve content tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentTaskByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve content task with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddContentTaskMessage" xml:space="preserve">
+    <value>Failed to add content task. See inner exception for details</value>
+  </data>
+  <data name="ContentTaskNotFoundMessage" xml:space="preserve">
+    <value>Content task not found</value>
+  </data>
+  <data name="FailedToUpdateContentTaskMessage" xml:space="preserve">
+    <value>Failed to update content task. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteContentTaskMessage" xml:space="preserve">
+    <value>Failed to delete content task. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveGoalsMessage" xml:space="preserve">
+    <value>Failed to retrieve goals. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveGoalByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve goal with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddGoalMessage" xml:space="preserve">
+    <value>Failed to add goal. See inner exception for details</value>
+  </data>
+  <data name="GoalNotFoundMessage" xml:space="preserve">
+    <value>Goal not found</value>
+  </data>
+  <data name="FailedToUpdateGoalMessage" xml:space="preserve">
+    <value>Failed to update goal. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteGoalMessage" xml:space="preserve">
+    <value>Failed to delete goal. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveMediaMessage" xml:space="preserve">
+    <value>Failed to retrieve media records. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveMediaByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve media with ID {id}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddMediaMessage" xml:space="preserve">
+    <value>Failed to add media. See inner exception for details</value>
+  </data>
+  <data name="MediaNotFoundMessage" xml:space="preserve">
+    <value>Media not found</value>
+  </data>
+  <data name="FailedToUpdateMediaMessage" xml:space="preserve">
+    <value>Failed to update media. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteMediaMessage" xml:space="preserve">
+    <value>Failed to delete media. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrievePerformedSubtasksMessage" xml:space="preserve">
+    <value>Failed to retrieve performed subtasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrievePerformedSubtaskMessage" xml:space="preserve">
+    <value>Failed to retrieve the performed subtask with ID {id}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddPerformedSubtaskMessage" xml:space="preserve">
+    <value>Failed to add the performed subtask. See inner exception for details</value>
+  </data>
+  <data name="PerformedSubtaskNotFoundMessage" xml:space="preserve">
+    <value>Performed subtask not found</value>
+  </data>
+  <data name="FailedToUpdatePerformedSubtaskMessage" xml:space="preserve">
+    <value>Failed to update the performed subtask. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeletePerformedSubtaskMessage" xml:space="preserve">
+    <value>Failed to delete the performed subtask. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveProjectUsersMessage" xml:space="preserve">
+    <value>Failed to retrieve project users. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveProjectUserMessage" xml:space="preserve">
+    <value>Failed to retrieve project user with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddProjectUserMessage" xml:space="preserve">
+    <value>Failed to add project user. See inner exception for details</value>
+  </data>
+  <data name="ProjectUserNotFoundMessage" xml:space="preserve">
+    <value>Project User not found</value>
+  </data>
+  <data name="FailedToUpdateProjectUserMessage" xml:space="preserve">
+    <value>Failed to update project user. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteProjectUserMessage" xml:space="preserve">
+    <value>Failed to delete project user. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrievePerformedTasksMessage" xml:space="preserve">
+    <value>Failed to retrieve performed tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrievePerformedTaskMessage" xml:space="preserve">
+    <value>Failed to retrieve performed task with ID {id}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddPerformedTaskMessage" xml:space="preserve">
+    <value>Failed to add the performed task. See inner exception for details</value>
+  </data>
+  <data name="PerformedTaskNotFoundMessage" xml:space="preserve">
+    <value>Performed task not found</value>
+  </data>
+  <data name="FailedToUpdatePerformedTaskMessage" xml:space="preserve">
+    <value>Failed to update the performed task. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeletePerformedTaskMessage" xml:space="preserve">
+    <value>Failed to delete the performed task. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveProjectsMessage" xml:space="preserve">
+    <value>Failed to retrieve projects. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveProjectMessage" xml:space="preserve">
+    <value>Failed to retrieve the project with ID {id}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddProjectMessage" xml:space="preserve">
+    <value>Failed to add the project. See inner exception for details</value>
+  </data>
+  <data name="ProjectNotFoundMessage" xml:space="preserve">
+    <value>Project not found</value>
+  </data>
+  <data name="FailedToUpdateProjectMessage" xml:space="preserve">
+    <value>Failed to update the project. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteProjectMessage" xml:space="preserve">
+    <value>Failed to delete the project. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveSetTimesMessage" xml:space="preserve">
+    <value>Failed to retrieve set times. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveSetTimeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve set time with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddSetTimeMessage" xml:space="preserve">
+    <value>Failed to add set time. See inner exception for details</value>
+  </data>
+  <data name="SetTimeNotFoundMessage" xml:space="preserve">
+    <value>Set time not found</value>
+  </data>
+  <data name="FailedToUpdateSetTimeMessage" xml:space="preserve">
+    <value>Failed to update set time. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteSetTimeMessage" xml:space="preserve">
+    <value>Failed to delete set time. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveSubtasksMessage" xml:space="preserve">
+    <value>Failed to retrieve subtasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveSubtaskByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve subtask by ID. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddSubtaskMessage" xml:space="preserve">
+    <value>Failed to add subtask. See inner exception for details</value>
+  </data>
+  <data name="SubtaskNotFoundMessage" xml:space="preserve">
+    <value>Subtask not found</value>
+  </data>
+  <data name="FailedToUpdateSubtaskMessage" xml:space="preserve">
+    <value>Failed to update subtask. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteSubtaskMessage" xml:space="preserve">
+    <value>Failed to delete subtask. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTasksMessage" xml:space="preserve">
+    <value>Failed to retrieve tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTaskMessage" xml:space="preserve">
+    <value>Failed to retrieve the task. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddTaskMessage" xml:space="preserve">
+    <value>Failed to add the task. See inner exception for details</value>
+  </data>
+  <data name="TaskNotFoundMessage" xml:space="preserve">
+    <value>Task not found</value>
+  </data>
+  <data name="FailedToUpdateTaskMessage" xml:space="preserve">
+    <value>Failed to update the task. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteTaskMessage" xml:space="preserve">
+    <value>Failed to delete the task. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTeamsMessage" xml:space="preserve">
+    <value>Failed to retrieve teams. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTeamByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve team with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddTeamMessage" xml:space="preserve">
+    <value>Failed to add the team. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateTeamMessage" xml:space="preserve">
+    <value>Failed to update the team. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteTeamMessage" xml:space="preserve">
+    <value>Failed to delete the team. See inner exception for details</value>
+  </data>
+  <data name="TeamNotFoundMessage" xml:space="preserve">
+    <value>Team not found</value>
+  </data>
+  <data name="FailedToRetrieveTeamMessage" xml:space="preserve">
+    <value>Failed to retrieve the team and related users. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTeamUsersMessage" xml:space="preserve">
+    <value>Failed to retrieve the list of team users. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTeamUserByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve the team user with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddTeamUserMessage" xml:space="preserve">
+    <value>Failed to add the team user. See inner exception for details</value>
+  </data>
+  <data name="TeamUserNotFoundMessage" xml:space="preserve">
+    <value>Team user not found</value>
+  </data>
+  <data name="FailedToUpdateTeamUserMessage" xml:space="preserve">
+    <value>Failed to update the team user. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteTeamUserMessage" xml:space="preserve">
+    <value>Failed to delete the team user. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveGoalPeriodMessage" xml:space="preserve">
+    <value>Failed to retrieve the list of goal periods. See the inner exception for more details</value>
+  </data>
+  <data name="FailedToRetrieveGoalSubjectMessage" xml:space="preserve">
+    <value>Failed to retrieve the list of goal subjects. See the inner exception for more details</value>
+  </data>
+  <data name="FailedToRetrieveGoalTypeMessage" xml:space="preserve">
+    <value>Failed to retrieve the list of goal types. See the inner exception for more details</value>
+  </data>
+  <data name="FailedToRetrieveUserRolesMessage" xml:space="preserve">
+    <value>Failed to retrieve user roles. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCharityTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve charity types. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCharitiesMessage" xml:space="preserve">
+    <value>Failed to retrieve charities. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCharityByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve charity with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddCharityMessage" xml:space="preserve">
+    <value>Failed to add charity. See inner exception for details</value>
+  </data>
+  <data name="CharityNotFoundMessage" xml:space="preserve">
+    <value>Charity not found</value>
+  </data>
+  <data name="FailedToUpdateCharityMessage" xml:space="preserve">
+    <value>Failed to update charity. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCharityMessage" xml:space="preserve">
+    <value>Failed to delete charity. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentStatusesMessage" xml:space="preserve">
+    <value>Failed to retrieve content statuses. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve content types. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveContentFrequenciesMessage" xml:space="preserve">
+    <value>Failed to retrieve content frequencies. See inner exception for details</value>
+  </data>
+</root>

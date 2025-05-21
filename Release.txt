@@ -1,0 +1,17 @@
+ssh root@dev2.bisevoapp.se "tail -f /BisevoAdmin/logs/success/success_log_20241003.txt"
+ssh root@dev2.bisevoapp.se "tail -f /BisevoAdmin/logs/errors/error_log_20241003.txt"
+
+
+scp -r * root@dev2.bisevoapp.se:/BisevoAdmin/
+ssh  root@dev2.bisevoapp.se  "systemctl restart bisevoadminapi.service"
+
+
+scp -r * root@dev2.bisevoapp.se:/BisevoOpenapi/
+ssh  root@dev2.bisevoapp.se  "systemctl restart bisevoopenapi.service"
+
+
+scp -r release/* root@dev2.bisevoapp.se:/BisevoMobile/
+ssh root@dev2.bisevoapp.se "systemctl restart bisevomobile.service"
+
+
+scp -r dist/* root@dev2.bisevoapp.se:/usr/share/nginx/dev2.bisevoapp.se/
