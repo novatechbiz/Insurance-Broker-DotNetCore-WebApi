@@ -54,6 +54,12 @@ builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IEncryptionHelper, EncryptionHelper>();
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICustomerTypeService, CustomerTypeService>();
+builder.Services.AddScoped<ICustomerIdentificationTypeService, CustomerIdentificationTypeService>();
+builder.Services.AddScoped<IGenderTypeService, GenderTypeService>();
+builder.Services.AddScoped<IUserTypeService, UserTypeService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+
 
 
 // Correctly register MediatR
@@ -63,6 +69,11 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<CompanyValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CustomerTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CustomerIdentificationTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<GenderTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<UserTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RoleValidator>();
 
 
 
@@ -126,6 +137,11 @@ app.MapGet("/", () => Results.Redirect("/index.html"))
 app.MapAuthEndpoints();
 app.MapUserEndpoints();
 app.MapUserRoleEndpoints();
+app.MapCustomerTypeEndpoints();
+app.MapCustomerIdentificationTypeEndpoints();
+app.MapGenderTypeEndpoints();
+app.MapRoleEndpoints();
+app.MapUserTypeEndpoints();
 
 app.Run();
 
