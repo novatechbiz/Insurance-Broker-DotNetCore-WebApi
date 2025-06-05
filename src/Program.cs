@@ -34,8 +34,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
-
 // Configure DbContext with connection string
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
@@ -54,6 +52,10 @@ builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IEncryptionHelper, EncryptionHelper>();
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICompanyTypeService, CompanyTypeService>();
+builder.Services.AddScoped<IInsuranceCompanyService, InsuranceCompanyService>();
+builder.Services.AddScoped<ISystemFunctionService, SystemFunctionService>();
+builder.Services.AddScoped<IPremiumLineService, PremiumLineService>();
 
 
 // Correctly register MediatR
@@ -63,7 +65,9 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<CompanyValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
-
+builder.Services.AddValidatorsFromAssemblyContaining<SystemFunctionValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CompanyTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<PremiumLineValidator>();
 
 
 builder.Services.AddFluentValidationAutoValidation();
@@ -92,24 +96,22 @@ builder.Services.AddAuthorization();
 LoggingConfiguration.ConfigureSerilog();
 builder.Host.UseSerilog();
 
+
 var app = builder.Build();
 
 // Use the CORS policy
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
-
+//}
 
 // Use authentication middleware
 app.UseAuthentication();
 app.UseAuthorization();
-
-
 
 // Use custom error handling middleware
 app.UseMiddleware<GlobalExceptionMiddleware>();
@@ -117,15 +119,14 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 // Enable serving static files
 app.UseStaticFiles();
 
-// Redirect root URL to the index.html page
-app.MapGet("/", () => Results.Redirect("/index.html"))
-   .WithName("HomePage")
-   .WithTags("Home");
-
 // Map endpoints
 app.MapAuthEndpoints();
 app.MapUserEndpoints();
 app.MapUserRoleEndpoints();
+app.MapSystemFunctionEndpoints();
+app.MapCompanyTypeEndpoints();
+app.MapInsuranceCompanyEndpoints();
+app.MapPremiumLineEndpoints();
 
 app.Run();
 
