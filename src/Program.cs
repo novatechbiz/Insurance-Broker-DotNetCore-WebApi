@@ -51,6 +51,11 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 // Add Services
 
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IRecordStatusService, RecordStatusService>();
+builder.Services.AddScoped<IInsuranceTypeService, InsuranceTypeService>();
+builder.Services.AddScoped<IEntryTypeService, EntryTypeService>();
+builder.Services.AddScoped<ICurrencyService, CurrencyService>();
+builder.Services.AddScoped<ITransactionTypeService, TransactionTypeService>();
 builder.Services.AddScoped<IEncryptionHelper, EncryptionHelper>();
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -63,6 +68,11 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<CompanyValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RecordStatusValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<InsuranceTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<TransactionTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<EntryTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CurrencyValidator>();
 
 
 
@@ -126,6 +136,11 @@ app.MapGet("/", () => Results.Redirect("/index.html"))
 app.MapAuthEndpoints();
 app.MapUserEndpoints();
 app.MapUserRoleEndpoints();
+app.MapRecordStatusEndpoints();
+app.MapTransactionTypeEndpoints();
+app.MapCurrencyEndpoints();
+app.MapEntryTypeEndpoints();
+app.MapInsuranceTypeEndpoints();
 
 app.Run();
 

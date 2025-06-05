@@ -15,7 +15,7 @@
         public const string Authenticated = "authenticated";
     }
 
-    public static class RecordStatus
+    public static class RecordsStatus
     {
         public const int Pending = 0;
         public const int Active = 1;
