@@ -465,6 +465,89 @@
   <data name="FailedToRetrieveContentFrequenciesMessage" xml:space="preserve">
     <value>Failed to retrieve content frequencies. See inner exception for details</value>
   </data>
+  <data name="EntityNotFoundMessage" xml:space="preserve">
+    <value>Entry type not found</value>
+  </data>
+  <data name="FailedToAddCurrencyMessage" xml:space="preserve">
+    <value>Failed to add currency. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddEntryTypeMessage" xml:space="preserve">
+    <value>Failed to add entryType. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddInsuranceTypeMessage" xml:space="preserve">
+    <value>Failed to add insurance type. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddRecordStatusMessage" xml:space="preserve">
+    <value>Fail to Add Record Status</value>
+  </data>
+  <data name="FailedToAddTransactionTypeMessage" xml:space="preserve">
+    <value>Failed to add transaction type. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCurrencyMessage" xml:space="preserve">
+    <value>Failed to delete currency. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteEntryTypeMessage" xml:space="preserve">
+    <value>Failed to delete entry type. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteInsuranceTypeMessage" xml:space="preserve">
+    <value>Failed to delete insurance type. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteRecordStatusMessage" xml:space="preserve">
+    <value>Fail to Delete Record Status</value>
+  </data>
+  <data name="FailedToDeleteTransactionTypeMessage" xml:space="preserve">
+    <value>Failed to delete transaction type. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCurrenciesMessage" xml:space="preserve">
+    <value>Failed to retrieve currencies. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCurrencyByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve currencies with ID{0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveEntryTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve entry types with ID{0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveEntryTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve entry type. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveInsuranceTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve insurance types with ID{0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveInsuranceTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve insurance types. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveRecordStatusByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve project users with ID{0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveRecordStatusesMessage" xml:space="preserve">
+    <value>Failed to retrieve record status. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTransactionTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve transaction type with ID{0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveTransactionTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve trasaction type. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateCurrencyMessage" xml:space="preserve">
+    <value>Failed to update currency. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateEntryTypeMessage" xml:space="preserve">
+    <value>Failed to update entry type. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateInsuranceTypeMessage" xml:space="preserve">
+    <value>Failed to update insurance type. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateRecordStatusMessage" xml:space="preserve">
+    <value>Failed to update update. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateTransactionTypeMessage" xml:space="preserve">
+    <value>Failed to update transaction type. See inner exception for details</value>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="TransactionTypeNotFoundMessage" xml:space="preserve">
+    <value>Transaction type not found</value>
   <data name="CompanyTypeFindFailureMessage" xml:space="preserve">
     <value>Company type find failure</value>
   </data>

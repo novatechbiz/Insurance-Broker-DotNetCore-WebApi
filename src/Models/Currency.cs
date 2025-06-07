@@ -10,11 +10,11 @@ namespace InsuraNova.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string CurrencyName { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(50)]
         public string CurrencyCode { get; set; }
     }
 }

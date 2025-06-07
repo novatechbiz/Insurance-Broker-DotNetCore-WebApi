@@ -13,7 +13,7 @@ namespace InsuraNova.Models
         public int StatusValue { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string StatusName { get; set; }
     }
 }
