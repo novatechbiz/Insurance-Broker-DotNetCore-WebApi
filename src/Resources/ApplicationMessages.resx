@@ -542,6 +542,7 @@
   </data>
   <data name="NotFoundMessage" xml:space="preserve">
     <value>not found</value>
+  </data>	  
   <data name="EntityNotFoundMessage" xml:space="preserve">
     <value>Entry type not found</value>
   </data>
@@ -625,6 +626,7 @@
   </data>
   <data name="TransactionTypeNotFoundMessage" xml:space="preserve">
     <value>Transaction type not found</value>
+  </data>  
   <data name="CompanyTypeFindFailureMessage" xml:space="preserve">
     <value>Company type find failure</value>
   </data>
