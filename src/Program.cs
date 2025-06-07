@@ -1,30 +1,36 @@
-using InsuraNova.Data;
-using InsuraNova.Repositories;
-using InsuraNova.Validation;
-using Microsoft.EntityFrameworkCore;
-using FluentValidation.AspNetCore;
-using InsuraNova.Endpoints;
-using InsuraNova.Middleware;
-using InsuraNova.Helpers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using InsuraNova.Services;
 using Amazon.SimpleEmail;
+using FluentValidation.AspNetCore;
 using InsuraNova.Configurations;
+using InsuraNova.Data;
+using InsuraNova.Endpoints;
+using InsuraNova.Helpers;
+using InsuraNova.Middleware;
+using InsuraNova.Repositories;
+using InsuraNova.Services;
+using InsuraNova.Validation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
+using System.Text;
 
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Allowed origins
+var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+
+// CORS configuration
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin() 
-              .AllowAnyHeader() 
-              .AllowAnyMethod();
+        policy.WithOrigins(allowedOrigins!)
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials();
     });
 });
 
@@ -42,12 +48,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddAWSService<IAmazonSimpleEmailService>();
 
 
+// Add Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 // Add Services
-
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IRecordStatusService, RecordStatusService>();
 builder.Services.AddScoped<IInsuranceTypeService, InsuranceTypeService>();
@@ -116,6 +122,40 @@ builder.Services.AddAuthorization();
 LoggingConfiguration.ConfigureSerilog();
 builder.Host.UseSerilog();
 
+// Add Swagger
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "User Auth", Version = "v1", Description = "Services to Authenticate user" });
+
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token in the following format: {your token here} do not add the word 'Bearer' before it."
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header,
+            },
+            new List<string>()
+        }
+    });
+});
 
 var app = builder.Build();
 
@@ -123,11 +163,11 @@ var app = builder.Build();
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
-//}
+}
 
 // Use authentication middleware
 app.UseAuthentication();
@@ -138,6 +178,11 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 
 // Enable serving static files
 app.UseStaticFiles();
+
+// Redirect root URL to the index.html page
+app.MapGet("/", () => Results.Redirect("/index.html"))
+   .WithName("HomePage")
+   .WithTags("Home");
 
 // Map endpoints
 app.MapAuthEndpoints();
