@@ -79,6 +79,33 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company type find failure.
+        /// </summary>
+        internal static string CompanyTypeFindFailureMessage {
+            get {
+                return ResourceManager.GetString("CompanyTypeFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company type not found.
+        /// </summary>
+        internal static string CompanyTypeNotFoundMessage {
+            get {
+                return ResourceManager.GetString("CompanyTypeNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company type retrieval failure by name.
+        /// </summary>
+        internal static string CompanyTypeRetrievalFailureByNameMessage {
+            get {
+                return ResourceManager.GetString("CompanyTypeRetrievalFailureByNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Content not found.
         /// </summary>
         internal static string ContentNotFoundMessage {
@@ -934,6 +961,33 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insurance company find failure.
+        /// </summary>
+        internal static string InsuranceCompanyFindFailureMessage {
+            get {
+                return ResourceManager.GetString("InsuranceCompanyFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insurance company not found.
+        /// </summary>
+        internal static string InsuranceCompanyNotFoundMessage {
+            get {
+                return ResourceManager.GetString("InsuranceCompanyNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insurance company retrieval failure by name.
+        /// </summary>
+        internal static string InsuranceCompanyRetrievalFailureByNameMessage {
+            get {
+                return ResourceManager.GetString("InsuranceCompanyRetrievalFailureByNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Media not found.
         /// </summary>
         internal static string MediaNotFoundMessage {
@@ -970,6 +1024,33 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Premium line find failure.
+        /// </summary>
+        internal static string PremiumLineFindFailureMessage {
+            get {
+                return ResourceManager.GetString("PremiumLineFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium Line not found.
+        /// </summary>
+        internal static string PremiumLineNotFoundMessage {
+            get {
+                return ResourceManager.GetString("PremiumLineNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium line retrieval failure by Id.
+        /// </summary>
+        internal static string PremiumLineRetrievalFailureByIdMessage {
+            get {
+                return ResourceManager.GetString("PremiumLineRetrievalFailureByIdMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Project not found.
         /// </summary>
         internal static string ProjectNotFoundMessage {
@@ -1002,6 +1083,33 @@ namespace InsuraNova.Resources {
         internal static string SubtaskNotFoundMessage {
             get {
                 return ResourceManager.GetString("SubtaskNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System function find failure.
+        /// </summary>
+        internal static string SystemFunctionFindFailureMessage {
+            get {
+                return ResourceManager.GetString("SystemFunctionFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System function not found.
+        /// </summary>
+        internal static string SystemFunctionNotFoundMessage {
+            get {
+                return ResourceManager.GetString("SystemFunctionNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System function retrieval failure by name.
+        /// </summary>
+        internal static string SystemFunctionRetrievalFailureByNameMessage {
+            get {
+                return ResourceManager.GetString("SystemFunctionRetrievalFailureByNameMessage", resourceCulture);
             }
         }
         
