@@ -16,6 +16,11 @@ namespace InsuraNova.Data
         public DbSet<TransactionType> TransactionTypes { get; set; }
         public DbSet<InsuranceType> InsuranceTypes { get; set; }
         public DbSet<RecordStatus> RecordStatuses { get; set; }
+        public DbSet<CompanyType> CompanyTypes { get; set; }
+        public DbSet<SystemFunction> SystemFunctions { get; set; }
+        public DbSet<PremiumLine> PremiumLines { get; set; }
+        public DbSet<InsuranceCompany> InsuranceCompanies { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
