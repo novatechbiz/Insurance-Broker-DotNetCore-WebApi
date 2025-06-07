@@ -79,6 +79,33 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company type find failure.
+        /// </summary>
+        internal static string CompanyTypeFindFailureMessage {
+            get {
+                return ResourceManager.GetString("CompanyTypeFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company type not found.
+        /// </summary>
+        internal static string CompanyTypeNotFoundMessage {
+            get {
+                return ResourceManager.GetString("CompanyTypeNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company type retrieval failure by name.
+        /// </summary>
+        internal static string CompanyTypeRetrievalFailureByNameMessage {
+            get {
+                return ResourceManager.GetString("CompanyTypeRetrievalFailureByNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Content not found.
         /// </summary>
         internal static string ContentNotFoundMessage {
@@ -129,6 +156,15 @@ namespace InsuraNova.Resources {
         internal static string EntityListRetrievalFailureMessage {
             get {
                 return ResourceManager.GetString("EntityListRetrievalFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry type not found.
+        /// </summary>
+        internal static string EntityNotFoundMessage {
+            get {
+                return ResourceManager.GetString("EntityNotFoundMessage", resourceCulture);
             }
         }
         
@@ -201,6 +237,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToAddCustomerTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToAddCustomerTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to add currency. See inner exception for details.
+        /// </summary>
+        internal static string FailedToAddCurrencyMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddCurrencyMessage", resourceCulture);
             }
         }
         
@@ -210,6 +251,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToAddGenderTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToAddGenderTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to add entryType. See inner exception for details.
+        /// </summary>
+        internal static string FailedToAddEntryTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddEntryTypeMessage", resourceCulture);
             }
         }
         
@@ -219,6 +265,15 @@ namespace InsuraNova.Resources {
         internal static string FailedToAddGoalMessage {
             get {
                 return ResourceManager.GetString("FailedToAddGoalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to add insurance type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToAddInsuranceTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddInsuranceTypeMessage", resourceCulture);
             }
         }
         
@@ -273,6 +328,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToAddRoleMessage {
             get {
                 return ResourceManager.GetString("FailedToAddRoleMessage", resourceCulture);
+        ///   Looks up a localized string similar to Fail to Add Record Status.
+        /// </summary>
+        internal static string FailedToAddRecordStatusMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddRecordStatusMessage", resourceCulture);
             }
         }
         
@@ -327,6 +387,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToAddUserTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToAddUserTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to add transaction type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToAddTransactionTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddTransactionTypeMessage", resourceCulture);
             }
         }
         
@@ -372,6 +437,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToDeleteCustomerIdentificationTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToDeleteCustomerIdentificationTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to delete currency. See inner exception for details.
+        /// </summary>
+        internal static string FailedToDeleteCurrencyMessage {
+            get {
+                return ResourceManager.GetString("FailedToDeleteCurrencyMessage", resourceCulture);
             }
         }
         
@@ -390,6 +460,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToDeleteGenderTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToDeleteGenderTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to delete entry type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToDeleteEntryTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToDeleteEntryTypeMessage", resourceCulture);
             }
         }
         
@@ -399,6 +474,15 @@ namespace InsuraNova.Resources {
         internal static string FailedToDeleteGoalMessage {
             get {
                 return ResourceManager.GetString("FailedToDeleteGoalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to delete insurance type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToDeleteInsuranceTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToDeleteInsuranceTypeMessage", resourceCulture);
             }
         }
         
@@ -453,6 +537,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToDeleteRoleMessage {
             get {
                 return ResourceManager.GetString("FailedToDeleteRoleMessage", resourceCulture);
+        ///   Looks up a localized string similar to Fail to Delete Record Status.
+        /// </summary>
+        internal static string FailedToDeleteRecordStatusMessage {
+            get {
+                return ResourceManager.GetString("FailedToDeleteRecordStatusMessage", resourceCulture);
             }
         }
         
@@ -507,6 +596,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToDeleteUserTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToDeleteUserTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to delete transaction type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToDeleteTransactionTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToDeleteTransactionTypeMessage", resourceCulture);
             }
         }
         
@@ -624,6 +718,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveCustomerIdentificationTypeByIdMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveCustomerIdentificationTypeByIdMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to retrieve currencies. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveCurrenciesMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveCurrenciesMessage", resourceCulture);
             }
         }
         
@@ -633,6 +732,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveCustomerIdentificationTypesMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveCustomerIdentificationTypesMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to retrieve currencies with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveCurrencyByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveCurrencyByIdMessage", resourceCulture);
             }
         }
         
@@ -642,6 +746,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveCustomerTypeByIdMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveCustomerTypeByIdMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to retrieve entry types with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveEntryTypeByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveEntryTypeByIdMessage", resourceCulture);
             }
         }
         
@@ -669,6 +778,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveGenderTypesMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveGenderTypesMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to retrieve entry type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveEntryTypesMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveEntryTypesMessage", resourceCulture);
             }
         }
         
@@ -714,6 +828,24 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveGoalTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveGoalTypeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve insurance types with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveInsuranceTypeByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveInsuranceTypeByIdMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve insurance types. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveInsuranceTypesMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveInsuranceTypesMessage", resourceCulture);
             }
         }
         
@@ -813,6 +945,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveRoleByIdMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveRoleByIdMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to retrieve project users with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveRecordStatusByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveRecordStatusByIdMessage", resourceCulture);
             }
         }
         
@@ -822,6 +959,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveRolesMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveRolesMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to retrieve record status. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveRecordStatusesMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveRecordStatusesMessage", resourceCulture);
             }
         }
         
@@ -925,6 +1067,24 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve transaction type with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveTransactionTypeByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveTransactionTypeByIdMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve trasaction type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveTransactionTypesMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveTransactionTypesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve user roles. See inner exception for details.
         /// </summary>
         internal static string FailedToRetrieveUserRolesMessage {
@@ -993,6 +1153,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToUpdateCustomerIdentificationTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToUpdateCustomerIdentificationTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to update currency. See inner exception for details.
+        /// </summary>
+        internal static string FailedToUpdateCurrencyMessage {
+            get {
+                return ResourceManager.GetString("FailedToUpdateCurrencyMessage", resourceCulture);
             }
         }
         
@@ -1011,6 +1176,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToUpdateGenderTypeMessage {
             get {
                 return ResourceManager.GetString("FailedToUpdateGenderTypeMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to update entry type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToUpdateEntryTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToUpdateEntryTypeMessage", resourceCulture);
             }
         }
         
@@ -1020,6 +1190,15 @@ namespace InsuraNova.Resources {
         internal static string FailedToUpdateGoalMessage {
             get {
                 return ResourceManager.GetString("FailedToUpdateGoalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to update insurance type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToUpdateInsuranceTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToUpdateInsuranceTypeMessage", resourceCulture);
             }
         }
         
@@ -1074,6 +1253,11 @@ namespace InsuraNova.Resources {
         internal static string FailedToUpdateRoleMessage {
             get {
                 return ResourceManager.GetString("FailedToUpdateRoleMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to update update. See inner exception for details.
+        /// </summary>
+        internal static string FailedToUpdateRecordStatusMessage {
+            get {
+                return ResourceManager.GetString("FailedToUpdateRecordStatusMessage", resourceCulture);
             }
         }
         
@@ -1137,6 +1321,11 @@ namespace InsuraNova.Resources {
         internal static string GenderTypeNotFoundMessage {
             get {
                 return ResourceManager.GetString("GenderTypeNotFoundMessage", resourceCulture);
+        ///   Looks up a localized string similar to Failed to update transaction type. See inner exception for details.
+        /// </summary>
+        internal static string FailedToUpdateTransactionTypeMessage {
+            get {
+                return ResourceManager.GetString("FailedToUpdateTransactionTypeMessage", resourceCulture);
             }
         }
         
@@ -1159,6 +1348,33 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insurance company find failure.
+        /// </summary>
+        internal static string InsuranceCompanyFindFailureMessage {
+            get {
+                return ResourceManager.GetString("InsuranceCompanyFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insurance company not found.
+        /// </summary>
+        internal static string InsuranceCompanyNotFoundMessage {
+            get {
+                return ResourceManager.GetString("InsuranceCompanyNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insurance company retrieval failure by name.
+        /// </summary>
+        internal static string InsuranceCompanyRetrievalFailureByNameMessage {
+            get {
+                return ResourceManager.GetString("InsuranceCompanyRetrievalFailureByNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Media not found.
         /// </summary>
         internal static string MediaNotFoundMessage {
@@ -1168,7 +1384,7 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to not found.
+        ///   Looks up a localized string similar to Not Found.
         /// </summary>
         internal static string NotFoundMessage {
             get {
@@ -1200,6 +1416,33 @@ namespace InsuraNova.Resources {
         internal static string PerformedTaskNotFoundMessage {
             get {
                 return ResourceManager.GetString("PerformedTaskNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium line find failure.
+        /// </summary>
+        internal static string PremiumLineFindFailureMessage {
+            get {
+                return ResourceManager.GetString("PremiumLineFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium Line not found.
+        /// </summary>
+        internal static string PremiumLineNotFoundMessage {
+            get {
+                return ResourceManager.GetString("PremiumLineNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium line retrieval failure by Id.
+        /// </summary>
+        internal static string PremiumLineRetrievalFailureByIdMessage {
+            get {
+                return ResourceManager.GetString("PremiumLineRetrievalFailureByIdMessage", resourceCulture);
             }
         }
         
@@ -1240,6 +1483,33 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System function find failure.
+        /// </summary>
+        internal static string SystemFunctionFindFailureMessage {
+            get {
+                return ResourceManager.GetString("SystemFunctionFindFailureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System function not found.
+        /// </summary>
+        internal static string SystemFunctionNotFoundMessage {
+            get {
+                return ResourceManager.GetString("SystemFunctionNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System function retrieval failure by name.
+        /// </summary>
+        internal static string SystemFunctionRetrievalFailureByNameMessage {
+            get {
+                return ResourceManager.GetString("SystemFunctionRetrievalFailureByNameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Task not found.
         /// </summary>
         internal static string TaskNotFoundMessage {
@@ -1263,6 +1533,15 @@ namespace InsuraNova.Resources {
         internal static string TeamUserNotFoundMessage {
             get {
                 return ResourceManager.GetString("TeamUserNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction type not found.
+        /// </summary>
+        internal static string TransactionTypeNotFoundMessage {
+            get {
+                return ResourceManager.GetString("TransactionTypeNotFoundMessage", resourceCulture);
             }
         }
         

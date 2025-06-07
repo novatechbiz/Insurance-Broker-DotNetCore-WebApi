@@ -34,8 +34,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
-
 // Configure DbContext with connection string
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
@@ -51,6 +49,11 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 // Add Services
 
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IRecordStatusService, RecordStatusService>();
+builder.Services.AddScoped<IInsuranceTypeService, InsuranceTypeService>();
+builder.Services.AddScoped<IEntryTypeService, EntryTypeService>();
+builder.Services.AddScoped<ICurrencyService, CurrencyService>();
+builder.Services.AddScoped<ITransactionTypeService, TransactionTypeService>();
 builder.Services.AddScoped<IEncryptionHelper, EncryptionHelper>();
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -59,7 +62,10 @@ builder.Services.AddScoped<ICustomerIdentificationTypeService, CustomerIdentific
 builder.Services.AddScoped<IGenderTypeService, GenderTypeService>();
 builder.Services.AddScoped<IUserTypeService, UserTypeService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
-
+builder.Services.AddScoped<ICompanyTypeService, CompanyTypeService>();
+builder.Services.AddScoped<IInsuranceCompanyService, InsuranceCompanyService>();
+builder.Services.AddScoped<ISystemFunctionService, SystemFunctionService>();
+builder.Services.AddScoped<IPremiumLineService, PremiumLineService>();
 
 
 // Correctly register MediatR
@@ -74,7 +80,14 @@ builder.Services.AddValidatorsFromAssemblyContaining<CustomerIdentificationTypeV
 builder.Services.AddValidatorsFromAssemblyContaining<GenderTypeValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UserTypeValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<RoleValidator>();
-
+builder.Services.AddValidatorsFromAssemblyContaining<RecordStatusValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<InsuranceTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<TransactionTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<EntryTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CurrencyValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<SystemFunctionValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CompanyTypeValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<PremiumLineValidator>();
 
 
 builder.Services.AddFluentValidationAutoValidation();
@@ -103,35 +116,28 @@ builder.Services.AddAuthorization();
 LoggingConfiguration.ConfigureSerilog();
 builder.Host.UseSerilog();
 
+
 var app = builder.Build();
 
 // Use the CORS policy
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
-
+//}
 
 // Use authentication middleware
 app.UseAuthentication();
 app.UseAuthorization();
-
-
 
 // Use custom error handling middleware
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
 // Enable serving static files
 app.UseStaticFiles();
-
-// Redirect root URL to the index.html page
-app.MapGet("/", () => Results.Redirect("/index.html"))
-   .WithName("HomePage")
-   .WithTags("Home");
 
 // Map endpoints
 app.MapAuthEndpoints();
@@ -142,6 +148,15 @@ app.MapCustomerIdentificationTypeEndpoints();
 app.MapGenderTypeEndpoints();
 app.MapRoleEndpoints();
 app.MapUserTypeEndpoints();
+app.MapRecordStatusEndpoints();
+app.MapTransactionTypeEndpoints();
+app.MapCurrencyEndpoints();
+app.MapEntryTypeEndpoints();
+app.MapInsuranceTypeEndpoints();
+app.MapSystemFunctionEndpoints();
+app.MapCompanyTypeEndpoints();
+app.MapInsuranceCompanyEndpoints();
+app.MapPremiumLineEndpoints();
 
 app.Run();
 
