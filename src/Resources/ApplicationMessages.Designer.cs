@@ -214,6 +214,15 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed To Add MenuItem.
+        /// </summary>
+        internal static string FailedToAddMenuItemMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddMenuItemMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to add the performed subtask. See inner exception for details.
         /// </summary>
         internal static string FailedToAddPerformedSubtaskMessage {
@@ -345,6 +354,15 @@ namespace InsuraNova.Resources {
         internal static string FailedToDeleteMediaMessage {
             get {
                 return ResourceManager.GetString("FailedToDeleteMediaMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed To Delete MeniItem.
+        /// </summary>
+        internal static string FailedToDeleteMenuItemMessage {
+            get {
+                return ResourceManager.GetString("FailedToDeleteMenuItemMessage", resourceCulture);
             }
         }
         
@@ -601,6 +619,24 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed To Retrieve MenuItem.
+        /// </summary>
+        internal static string FailedToRetrieveMenuItemByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveMenuItemByIdMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fail To Retrieve MenuItems.
+        /// </summary>
+        internal static string FailedToRetrieveMenuItemsMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveMenuItemsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the performed subtask with ID {id}. See inner exception for details.
         /// </summary>
         internal static string FailedToRetrievePerformedSubtaskMessage {
@@ -835,6 +871,15 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed To Update Menu Item.
+        /// </summary>
+        internal static string FailedToUpdateMenuItemMessage {
+            get {
+                return ResourceManager.GetString("FailedToUpdateMenuItemMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to update the performed subtask. See inner exception for details.
         /// </summary>
         internal static string FailedToUpdatePerformedSubtaskMessage {
@@ -939,6 +984,15 @@ namespace InsuraNova.Resources {
         internal static string MediaNotFoundMessage {
             get {
                 return ResourceManager.GetString("MediaNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu Item Not Found.
+        /// </summary>
+        internal static string MenuItemNotFoundMessage {
+            get {
+                return ResourceManager.GetString("MenuItemNotFoundMessage", resourceCulture);
             }
         }
         

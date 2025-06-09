@@ -13,6 +13,7 @@ using InsuraNova.Services;
 using Amazon.SimpleEmail;
 using InsuraNova.Configurations;
 using Serilog;
+using InsuraNova.Handlers;
 
 
 
@@ -54,6 +55,8 @@ builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IEncryptionHelper, EncryptionHelper>();
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IMenuItemService, MenuItemService>();
+
 
 
 // Correctly register MediatR
@@ -98,11 +101,11 @@ var app = builder.Build();
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 
 // Use authentication middleware
@@ -126,6 +129,8 @@ app.MapGet("/", () => Results.Redirect("/index.html"))
 app.MapAuthEndpoints();
 app.MapUserEndpoints();
 app.MapUserRoleEndpoints();
+app.MapMenuItemEndpoints();
+
 
 app.Run();
 

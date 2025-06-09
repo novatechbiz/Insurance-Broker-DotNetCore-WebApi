@@ -11,6 +11,8 @@ namespace InsuraNova.Data
         public DbSet<Company> Companies { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; } 
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

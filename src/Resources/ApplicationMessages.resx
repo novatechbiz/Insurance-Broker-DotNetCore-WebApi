@@ -465,4 +465,22 @@
   <data name="FailedToRetrieveContentFrequenciesMessage" xml:space="preserve">
     <value>Failed to retrieve content frequencies. See inner exception for details</value>
   </data>
+  <data name="FailedToRetrieveMenuItemsMessage" xml:space="preserve">
+    <value>Fail To Retrieve MenuItems</value>
+  </data>
+  <data name="FailedToAddMenuItemMessage" xml:space="preserve">
+    <value>Failed To Add MenuItem</value>
+  </data>
+  <data name="FailedToDeleteMenuItemMessage" xml:space="preserve">
+    <value>Failed To Delete MeniItem</value>
+  </data>
+  <data name="FailedToRetrieveMenuItemByIdMessage" xml:space="preserve">
+    <value>Failed To Retrieve MenuItem</value>
+  </data>
+  <data name="FailedToUpdateMenuItemMessage" xml:space="preserve">
+    <value>Failed To Update Menu Item</value>
+  </data>
+  <data name="MenuItemNotFoundMessage" xml:space="preserve">
+    <value>Menu Item Not Found</value>
+  </data>
 </root>
