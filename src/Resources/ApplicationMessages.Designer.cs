@@ -1627,6 +1627,15 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username already exists.
+        /// </summary>
+        internal static string UserAlreadyExistsMessage {
+            get {
+                return ResourceManager.GetString("UserAlreadyExistsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to find the user by email.
         /// </summary>
         internal static string UserEmailLookupFailureMessage {

@@ -541,8 +541,8 @@
     <value>Failed to delete the userType. See inner exception for details</value>
   </data>
   <data name="NotFoundMessage" xml:space="preserve">
-    <value>not found</value>
-  </data>	  
+    <value>Not Found</value>
+  </data>
   <data name="EntityNotFoundMessage" xml:space="preserve">
     <value>Entry type not found</value>
   </data>
@@ -621,12 +621,9 @@
   <data name="FailedToUpdateTransactionTypeMessage" xml:space="preserve">
     <value>Failed to update transaction type. See inner exception for details</value>
   </data>
-  <data name="NotFoundMessage" xml:space="preserve">
-    <value>Not Found</value>
-  </data>
   <data name="TransactionTypeNotFoundMessage" xml:space="preserve">
     <value>Transaction type not found</value>
-  </data>  
+  </data>
   <data name="CompanyTypeFindFailureMessage" xml:space="preserve">
     <value>Company type find failure</value>
   </data>
@@ -662,5 +659,8 @@
   </data>
   <data name="SystemFunctionRetrievalFailureByNameMessage" xml:space="preserve">
     <value>System function retrieval failure by name</value>
+  </data>
+  <data name="UserAlreadyExistsMessage" xml:space="preserve">
+    <value>Username already exists</value>
   </data>
 </root>

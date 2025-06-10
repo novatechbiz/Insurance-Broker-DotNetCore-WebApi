@@ -1,4 +1,5 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace InsuraNova.Helpers
 {
@@ -65,18 +66,47 @@ namespace InsuraNova.Helpers
         }
 
 
+        //public static string? GetEmailFromToken(HttpContext context)
+        //{
+        //    // Get the token from the Authorization header
+        //    var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+        //    // Extract the user's email from the JWT token
+        //    var handler = new JwtSecurityTokenHandler();
+        //    var jwtToken = handler.ReadJwtToken(token);
+
+        //    var emailClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Email);
+        //    return emailClaim?.Value;
+        //}
+
         public static string? GetEmailFromToken(HttpContext context)
         {
-            // Get the token from the Authorization header
-            var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+            // Retrieve the Authorization header
+            var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
-            // Extract the user's email from the JWT token
+            if (string.IsNullOrWhiteSpace(authHeader) || !authHeader.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+                return null;
+
+            var token = authHeader["Bearer ".Length..].Trim();
+
+            if (string.IsNullOrWhiteSpace(token))
+                return null;
+
             var handler = new JwtSecurityTokenHandler();
-            var jwtToken = handler.ReadJwtToken(token);
 
-            var emailClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Email);
-            return emailClaim?.Value;
+            try
+            {
+                var jwtToken = handler.ReadJwtToken(token);
+                var emailClaim = jwtToken.Claims.FirstOrDefault(c =>
+                    c.Type == JwtRegisteredClaimNames.Email || c.Type == "email" || c.Type == ClaimTypes.Email);
+                return emailClaim?.Value;
+            }
+            catch
+            {
+                return null;
+            }
         }
+
 
         public static JwtTokenData GetJwtTokenData(HttpContext context)
         {
