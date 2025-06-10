@@ -11,7 +11,7 @@ namespace InsuraNova.Helpers
         public static readonly string Issuer = "https://greenalpha.lk";
         public static readonly string Audience = "https://greenalpha.lk";
         private static readonly TimeSpan TokenLifetime = TimeSpan.FromHours(10);
-        private static readonly TimeSpan RefreshTokenLifetime = TimeSpan.FromHours(12);
+        private static readonly TimeSpan RefreshTokenLifetime = TimeSpan.FromDays(7);
 
         public static string GenerateToken(UserProfile user)
         {
@@ -22,7 +22,8 @@ namespace InsuraNova.Helpers
             {
                 new Claim("userId", user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("roleId", user.UserTypeId.ToString())
+                new Claim("roleId", user.UserTypeId.ToString()),
+                new Claim("username", user.UserName),
             };
 
             var token = new JwtSecurityToken(
@@ -84,6 +85,20 @@ namespace InsuraNova.Helpers
                 return false;
             }
         }
+
+        public static void SetRefreshTokenCookie(HttpResponse response, string refreshToken, DateTime expiryTime)
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Expires = expiryTime
+            };
+
+            response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+        }
+
     }
 }
 

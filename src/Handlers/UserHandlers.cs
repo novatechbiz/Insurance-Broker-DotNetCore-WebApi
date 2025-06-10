@@ -1,10 +1,11 @@
-﻿using InsuraNova.Services;
+﻿using AutoMapper;
+using InsuraNova.Services;
 
 
 namespace InsuraNova.Handlers
 {
     // Queries
-    public record GetAllUsersQuery : IRequest<IEnumerable<UserProfile>>;
+    public record GetAllUsersQuery : IRequest<IEnumerable<UserDto>>;
     public record GetUserByIdQuery(int Id) : IRequest<UserProfile>;
 
     // Commands
@@ -15,15 +16,18 @@ namespace InsuraNova.Handlers
 
 
     // Handlers
-    public class GetAllUsersHandler(IUserService userService) : IRequestHandler<GetAllUsersQuery, IEnumerable<UserProfile>>
+    public class GetAllUsersHandler(IUserService userService, IMapper mapper) : IRequestHandler<GetAllUsersQuery, IEnumerable<UserDto>>
     {
         private readonly IUserService _userService = userService;
+        private readonly IMapper _mapper = mapper;
 
-        public async Task<IEnumerable<UserProfile>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<UserDto>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
             try
             {
-                return await _userService.GetAllUsersAsync();
+                var user = await _userService.GetAllUsersAsync();
+                var userDtos = _mapper.Map<IEnumerable<UserDto>>(user);
+                return userDtos;
             }
             catch (Exception)
             {

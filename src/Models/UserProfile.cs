@@ -25,7 +25,18 @@ namespace InsuraNova.Models
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(400)]
         public string UserPassword { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [StringLength(400)]
+        public string? RefreshToken { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }
