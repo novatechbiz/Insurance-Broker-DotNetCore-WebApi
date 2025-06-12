@@ -1,5 +1,6 @@
 using Amazon.SimpleEmail;
 using AspNetCoreRateLimit;
+using AspNetCoreRateLimit.Redis;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using InsuraNova.Configurations;
@@ -16,6 +17,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using StackExchange.Redis;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 
@@ -40,12 +43,24 @@ builder.Services.AddCors(options =>
 // Add HttpContextAccessor to access the current HTTP context
 builder.Services.AddHttpContextAccessor();
 
-// Add MemoryCache and configure IP rate limiting
-builder.Services.AddMemoryCache();
+// Configure Redis cache for rate limiting
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("RadisConnection");
+});
+
+builder.Services.AddRedisRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
 builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
-builder.Services.AddInMemoryRateLimiting();
-builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
+
+// Configure Radis
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var configuration = builder.Configuration.GetConnectionString("RadisConnection");
+    return ConnectionMultiplexer.Connect(configuration);
+});
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -76,6 +91,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 // Add Services
+builder.Services.AddScoped<ITokenBlacklistService, TokenBlacklistService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IRecordStatusService, RecordStatusService>();
 builder.Services.AddScoped<IInsuranceTypeService, InsuranceTypeService>();
@@ -120,24 +136,6 @@ builder.Services.AddValidatorsFromAssemblyContaining<PremiumLineValidator>();
 
 builder.Services.AddFluentValidationAutoValidation();
 
-// Add Authentication and Authorization
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-//}).AddJwtBearer(options =>
-//{
-//    options.TokenValidationParameters = new TokenValidationParameters
-//    {
-//        ValidateIssuer = true,
-//        ValidateAudience = true,
-//        ValidateLifetime = true,
-//        ValidateIssuerSigningKey = true,
-//        ValidIssuer = TokenHelper.Issuer,
-//        ValidAudience = TokenHelper.Audience,
-//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(TokenHelper.SecretKey))
-//    };
-//});
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -154,6 +152,24 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = TokenHelper.Issuer,
         ValidAudience = TokenHelper.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(TokenHelper.SecretKey))
+    };
+
+    // Validate blacklisted tokens
+    options.Events = new JwtBearerEvents
+    {
+        OnTokenValidated = async context =>
+        {
+            var tokenBlacklistService = context.HttpContext.RequestServices.GetRequiredService<ITokenBlacklistService>();
+            var jti = context.Principal.FindFirst(JwtRegisteredClaimNames.Jti)?.Value;
+            if (!string.IsNullOrEmpty(jti))
+            {
+                var isBlacklisted = await tokenBlacklistService.IsTokenBlacklistedAsync(jti);
+                if (isBlacklisted)
+                {
+                    context.Fail("Token is blacklisted.");
+                }
+            }
+        }
     };
 });
 
