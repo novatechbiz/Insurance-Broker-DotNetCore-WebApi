@@ -19,22 +19,22 @@ namespace InsuraNova.Models
         public int CustomerTypeId { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [StringLength(50)]
         public string CustomerName { get; set; }
 
-        [StringLength(100)]
+        [StringLength(50)]
         public string IdentificationNo { get; set; }
 
-        [StringLength(150)]
+        [StringLength(50)]
         public string FullName { get; set; }
 
-        [StringLength(20)]
+        [StringLength(50)]
         public string ContactNo { get; set; }
 
-        [StringLength(20)]
+        [StringLength(50)]
         public string WhatsAppNo { get; set; }
 
-        [StringLength(100)]
+        [StringLength(50)]
         [EmailAddress]
         public string EmailAddress { get; set; }
 
@@ -45,13 +45,13 @@ namespace InsuraNova.Models
 
         public int? RecordStatusId { get; set; }
 
-        [StringLength(100)]
-        public string EnteredBy { get; set; }
+        // [StringLength(100)]
+        public int EnteredBy { get; set; } //string
 
         public DateTime? EnteredDate { get; set; }
 
-        [StringLength(100)]
-        public string ModifiedBy { get; set; }
+        // [StringLength(100)]
+        public int ModifiedBy { get; set; } //string
 
         public DateTime? ModifiedDate { get; set; }
     }

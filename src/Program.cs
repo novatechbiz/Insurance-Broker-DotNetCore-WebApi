@@ -55,6 +55,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Add Services
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IRecordStatusService, RecordStatusService>();
 builder.Services.AddScoped<IInsuranceTypeService, InsuranceTypeService>();
 builder.Services.AddScoped<IEntryTypeService, EntryTypeService>();
@@ -80,6 +81,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<CompanyValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CustomerValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CustomerTypeValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CustomerIdentificationTypeValidator>();
@@ -189,6 +191,7 @@ app.MapAuthEndpoints();
 app.MapUserEndpoints();
 app.MapUserRoleEndpoints();
 app.MapCustomerTypeEndpoints();
+app.MapCustomerEndpoints();
 app.MapCustomerIdentificationTypeEndpoints();
 app.MapGenderTypeEndpoints();
 app.MapRoleEndpoints();

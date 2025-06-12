@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InsuraNova.Resources {
+namespace InsuraNova.Resources
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,1669 +23,2095 @@ namespace InsuraNova.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ApplicationMessages {
-        
+    internal class ApplicationMessages
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ApplicationMessages() {
+        internal ApplicationMessages()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InsuraNova.Resources.ApplicationMessages", typeof(ApplicationMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Charity not found.
         /// </summary>
-        internal static string CharityNotFoundMessage {
-            get {
+        internal static string CharityNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("CharityNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Company not found.
         /// </summary>
-        internal static string CompanyNotFoundMessage {
-            get {
+        internal static string CompanyNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("CompanyNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Company type find failure.
         /// </summary>
-        internal static string CompanyTypeFindFailureMessage {
-            get {
+        internal static string CompanyTypeFindFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("CompanyTypeFindFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Company type not found.
         /// </summary>
-        internal static string CompanyTypeNotFoundMessage {
-            get {
+        internal static string CompanyTypeNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("CompanyTypeNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Company type retrieval failure by name.
         /// </summary>
-        internal static string CompanyTypeRetrievalFailureByNameMessage {
-            get {
+        internal static string CompanyTypeRetrievalFailureByNameMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("CompanyTypeRetrievalFailureByNameMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Content not found.
         /// </summary>
-        internal static string ContentNotFoundMessage {
-            get {
+        internal static string ContentNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("ContentNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Content task not found.
         /// </summary>
-        internal static string ContentTaskNotFoundMessage {
-            get {
+        internal static string ContentTaskNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("ContentTaskNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the user with ID {0}.
         /// </summary>
-        internal static string DeleteUserFailureMessage {
-            get {
+        internal static string DeleteUserFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("DeleteUserFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the entity. See inner exception for details.
         /// </summary>
-        internal static string EntityAdditionFailureMessage {
-            get {
+        internal static string EntityAdditionFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityAdditionFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the entity with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string EntityDeletionFailureByIdMessage {
-            get {
+        internal static string EntityDeletionFailureByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityDeletionFailureByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the list of entities. See inner exception for details.
         /// </summary>
-        internal static string EntityListRetrievalFailureMessage {
-            get {
+        internal static string EntityListRetrievalFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityListRetrievalFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Entry type not found.
         /// </summary>
-        internal static string EntityNotFoundMessage {
-            get {
+        internal static string EntityNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve entity with related data for ID {0}. See inner exception for details.
         /// </summary>
-        internal static string EntityRelatedDataRetrievalFailureMessage {
-            get {
+        internal static string EntityRelatedDataRetrievalFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityRelatedDataRetrievalFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve entity with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string EntityRetrievalFailureByIdMessage {
-            get {
+        internal static string EntityRetrievalFailureByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityRetrievalFailureByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the entity. See inner exception for details.
         /// </summary>
-        internal static string EntityUpdateFailureMessage {
-            get {
+        internal static string EntityUpdateFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("EntityUpdateFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add charity. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddCharityMessage {
-            get {
+        internal static string FailedToAddCharityMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddCharityMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the company. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddCompanyMessage {
-            get {
+        internal static string FailedToAddCompanyMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddCompanyMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the content. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddContentMessage {
-            get {
+        internal static string FailedToAddContentMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddContentMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add content task. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddContentTaskMessage {
-            get {
+        internal static string FailedToAddContentTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddContentTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add currency. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddCurrencyMessage {
-            get {
+        internal static string FailedToAddCurrencyMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddCurrencyMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the Customer. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddCustomerTypeMessage {
-            get {
+        internal static string FailedToAddCustomerTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddCustomerTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add entryType. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddEntryTypeMessage {
-            get {
+        internal static string FailedToAddEntryTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddEntryTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the gednerType. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddGenderTypeMessage {
-            get {
+        internal static string FailedToAddGenderTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddGenderTypeMessage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to add the customer. See inner exception for details.
+        /// </summary>
+        internal static string FailedToAddCustomerMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToAddCustomerMessage", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add goal. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddGoalMessage {
-            get {
+        internal static string FailedToAddGoalMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddGoalMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add insurance type. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddInsuranceTypeMessage {
-            get {
+        internal static string FailedToAddInsuranceTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddInsuranceTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add media. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddMediaMessage {
-            get {
+        internal static string FailedToAddMediaMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddMediaMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the performed subtask. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddPerformedSubtaskMessage {
-            get {
+        internal static string FailedToAddPerformedSubtaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddPerformedSubtaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the performed task. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddPerformedTaskMessage {
-            get {
+        internal static string FailedToAddPerformedTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddPerformedTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the project. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddProjectMessage {
-            get {
+        internal static string FailedToAddProjectMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddProjectMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add project user. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddProjectUserMessage {
-            get {
+        internal static string FailedToAddProjectUserMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddProjectUserMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fail to Add Record Status.
         /// </summary>
-        internal static string FailedToAddRecordStatusMessage {
-            get {
+        internal static string FailedToAddRecordStatusMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddRecordStatusMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the role. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddRoleMessage {
-            get {
+        internal static string FailedToAddRoleMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddRoleMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add set time. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddSetTimeMessage {
-            get {
+        internal static string FailedToAddSetTimeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddSetTimeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add subtask. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddSubtaskMessage {
-            get {
+        internal static string FailedToAddSubtaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddSubtaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the task. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddTaskMessage {
-            get {
+        internal static string FailedToAddTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the team. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddTeamMessage {
-            get {
+        internal static string FailedToAddTeamMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddTeamMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the team user. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddTeamUserMessage {
-            get {
+        internal static string FailedToAddTeamUserMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddTeamUserMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add transaction type. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddTransactionTypeMessage {
-            get {
+        internal static string FailedToAddTransactionTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddTransactionTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the userType. See inner exception for details.
         /// </summary>
-        internal static string FailedToAddUserTypeMessage {
-            get {
+        internal static string FailedToAddUserTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToAddUserTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete charity. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteCharityMessage {
-            get {
+        internal static string FailedToDeleteCharityMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteCharityMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the company. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteCompanyMessage {
-            get {
+        internal static string FailedToDeleteCompanyMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteCompanyMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the content. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteContentMessage {
-            get {
+        internal static string FailedToDeleteContentMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteContentMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete content task. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteContentTaskMessage {
-            get {
+        internal static string FailedToDeleteContentTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteContentTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete currency. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteCurrencyMessage {
-            get {
+        internal static string FailedToDeleteCurrencyMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteCurrencyMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the customerIdentificationType. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteCustomerIdentificationTypeMessage {
-            get {
+        internal static string FailedToDeleteCustomerIdentificationTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteCustomerIdentificationTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the customerType. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteCustomerTypeMessage {
-            get {
+        internal static string FailedToDeleteCustomerTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteCustomerTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete entry type. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteEntryTypeMessage {
-            get {
+        internal static string FailedToDeleteEntryTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteEntryTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the genderType. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteGenderTypeMessage {
-            get {
+        internal static string FailedToDeleteGenderTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteGenderTypeMessage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to delete the customer. See inner exception for details.
+        /// </summary>
+        internal static string FailedToDeleteCustomerMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToDeleteCustomerMessage", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete goal. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteGoalMessage {
-            get {
+        internal static string FailedToDeleteGoalMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteGoalMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete insurance type. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteInsuranceTypeMessage {
-            get {
+        internal static string FailedToDeleteInsuranceTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteInsuranceTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete media. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteMediaMessage {
-            get {
+        internal static string FailedToDeleteMediaMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteMediaMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the performed subtask. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeletePerformedSubtaskMessage {
-            get {
+        internal static string FailedToDeletePerformedSubtaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeletePerformedSubtaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the performed task. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeletePerformedTaskMessage {
-            get {
+        internal static string FailedToDeletePerformedTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeletePerformedTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the project. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteProjectMessage {
-            get {
+        internal static string FailedToDeleteProjectMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteProjectMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete project user. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteProjectUserMessage {
-            get {
+        internal static string FailedToDeleteProjectUserMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteProjectUserMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fail to Delete Record Status.
         /// </summary>
-        internal static string FailedToDeleteRecordStatusMessage {
-            get {
+        internal static string FailedToDeleteRecordStatusMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteRecordStatusMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the role. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteRoleMessage {
-            get {
+        internal static string FailedToDeleteRoleMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteRoleMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete set time. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteSetTimeMessage {
-            get {
+        internal static string FailedToDeleteSetTimeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteSetTimeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete subtask. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteSubtaskMessage {
-            get {
+        internal static string FailedToDeleteSubtaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteSubtaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the task. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteTaskMessage {
-            get {
+        internal static string FailedToDeleteTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the team. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteTeamMessage {
-            get {
+        internal static string FailedToDeleteTeamMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteTeamMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the team user. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteTeamUserMessage {
-            get {
+        internal static string FailedToDeleteTeamUserMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteTeamUserMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete transaction type. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteTransactionTypeMessage {
-            get {
+        internal static string FailedToDeleteTransactionTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteTransactionTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to delete the userType. See inner exception for details.
         /// </summary>
-        internal static string FailedToDeleteUserTypeMessage {
-            get {
+        internal static string FailedToDeleteUserTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToDeleteUserTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve charities. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCharitiesMessage {
-            get {
+        internal static string FailedToRetrieveCharitiesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCharitiesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve charity with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCharityByIdMessage {
-            get {
+        internal static string FailedToRetrieveCharityByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCharityByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve charity types. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCharityTypesMessage {
-            get {
+        internal static string FailedToRetrieveCharityTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCharityTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve companies. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCompaniesMessage {
-            get {
+        internal static string FailedToRetrieveCompaniesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCompaniesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve company with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCompanyByIdMessage {
-            get {
+        internal static string FailedToRetrieveCompanyByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCompanyByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content frequencies. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentFrequenciesMessage {
-            get {
+        internal static string FailedToRetrieveContentFrequenciesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentFrequenciesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content with ID {id}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentMessage {
-            get {
+        internal static string FailedToRetrieveContentMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve contents. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentsMessage {
-            get {
+        internal static string FailedToRetrieveContentsMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentsMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content statuses. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentStatusesMessage {
-            get {
+        internal static string FailedToRetrieveContentStatusesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentStatusesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content task with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentTaskByIdMessage {
-            get {
+        internal static string FailedToRetrieveContentTaskByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentTaskByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content tasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentTasksMessage {
-            get {
+        internal static string FailedToRetrieveContentTasksMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentTasksMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content types. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveContentTypesMessage {
-            get {
+        internal static string FailedToRetrieveContentTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveContentTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve currencies. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCurrenciesMessage {
-            get {
+        internal static string FailedToRetrieveCurrenciesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCurrenciesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve currencies with ID{0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCurrencyByIdMessage {
-            get {
+        internal static string FailedToRetrieveCurrencyByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCurrencyByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve customerIdentificationType with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCustomerIdentificationTypeByIdMessage {
-            get {
+        internal static string FailedToRetrieveCustomerIdentificationTypeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCustomerIdentificationTypeByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content tasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCustomerIdentificationTypesMessage {
-            get {
+        internal static string FailedToRetrieveCustomerIdentificationTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCustomerIdentificationTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve customerType with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCustomerTypeByIdMessage {
-            get {
+        internal static string FailedToRetrieveCustomerTypeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCustomerTypeByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content tasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveCustomerTypesMessage {
-            get {
+        internal static string FailedToRetrieveCustomerTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveCustomerTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve entry types with ID{0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveEntryTypeByIdMessage {
-            get {
+        internal static string FailedToRetrieveEntryTypeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveEntryTypeByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve entry type. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveEntryTypesMessage {
-            get {
+        internal static string FailedToRetrieveEntryTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveEntryTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve genderType with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveGenderTypeByIdMessage {
-            get {
+        internal static string FailedToRetrieveGenderTypeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveGenderTypeByIdMessage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve customer with ID {0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveCustomerByIdMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveCustomereByIdMessage", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content tasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveGenderTypesMessage {
-            get {
+        internal static string FailedToRetrieveGenderTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveGenderTypesMessage", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve goal with ID {0}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveGoalByIdMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveGoalByIdMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve the list of goal periods. See the inner exception for more details.
-        /// </summary>
-        internal static string FailedToRetrieveGoalPeriodMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveGoalPeriodMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve goals. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveGoalsMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveGoalsMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve the list of goal subjects. See the inner exception for more details.
-        /// </summary>
-        internal static string FailedToRetrieveGoalSubjectMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveGoalSubjectMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve the list of goal types. See the inner exception for more details.
-        /// </summary>
-        internal static string FailedToRetrieveGoalTypeMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveGoalTypeMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve insurance types with ID{0}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveInsuranceTypeByIdMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveInsuranceTypeByIdMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve insurance types. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveInsuranceTypesMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveInsuranceTypesMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve media with ID {id}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveMediaByIdMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveMediaByIdMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve media records. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveMediaMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveMediaMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve the performed subtask with ID {id}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrievePerformedSubtaskMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrievePerformedSubtaskMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve performed subtasks. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrievePerformedSubtasksMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrievePerformedSubtasksMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve performed task with ID {id}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrievePerformedTaskMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrievePerformedTaskMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve performed tasks. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrievePerformedTasksMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrievePerformedTasksMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve the project with ID {id}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveProjectMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveProjectMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve projects. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveProjectsMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveProjectsMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve project user with ID {0}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveProjectUserMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveProjectUserMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve project users. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveProjectUsersMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveProjectUsersMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve project users with ID{0}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveRecordStatusByIdMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveRecordStatusByIdMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve record status. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveRecordStatusesMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveRecordStatusesMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve media with ID {id}. See inner exception for details.
-        /// </summary>
-        internal static string FailedToRetrieveRoleByIdMessage {
-            get {
-                return ResourceManager.GetString("FailedToRetrieveRoleByIdMessage", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve content tasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveRolesMessage {
-            get {
+        internal static string FailedToRetrieveCustomersMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveCustomersMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve goal with ID {0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveGoalByIdMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveGoalByIdMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve the list of goal periods. See the inner exception for more details.
+        /// </summary>
+        internal static string FailedToRetrieveGoalPeriodMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveGoalPeriodMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve goals. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveGoalsMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveGoalsMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve the list of goal subjects. See the inner exception for more details.
+        /// </summary>
+        internal static string FailedToRetrieveGoalSubjectMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveGoalSubjectMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve the list of goal types. See the inner exception for more details.
+        /// </summary>
+        internal static string FailedToRetrieveGoalTypeMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveGoalTypeMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve insurance types with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveInsuranceTypeByIdMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveInsuranceTypeByIdMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve insurance types. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveInsuranceTypesMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveInsuranceTypesMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve media with ID {id}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveMediaByIdMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveMediaByIdMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve media records. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveMediaMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveMediaMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve the performed subtask with ID {id}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrievePerformedSubtaskMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrievePerformedSubtaskMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve performed subtasks. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrievePerformedSubtasksMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrievePerformedSubtasksMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve performed task with ID {id}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrievePerformedTaskMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrievePerformedTaskMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve performed tasks. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrievePerformedTasksMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrievePerformedTasksMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve the project with ID {id}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveProjectMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveProjectMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve projects. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveProjectsMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveProjectsMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve project user with ID {0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveProjectUserMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveProjectUserMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve project users. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveProjectUsersMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveProjectUsersMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve project users with ID{0}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveRecordStatusByIdMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveRecordStatusByIdMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve record status. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveRecordStatusesMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveRecordStatusesMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve media with ID {id}. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveRoleByIdMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToRetrieveRoleByIdMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve content tasks. See inner exception for details.
+        /// </summary>
+        internal static string FailedToRetrieveRolesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveRolesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve set time with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveSetTimeByIdMessage {
-            get {
+        internal static string FailedToRetrieveSetTimeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveSetTimeByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve set times. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveSetTimesMessage {
-            get {
+        internal static string FailedToRetrieveSetTimesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveSetTimesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve subtask by ID. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveSubtaskByIdMessage {
-            get {
+        internal static string FailedToRetrieveSubtaskByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveSubtaskByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve subtasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveSubtasksMessage {
-            get {
+        internal static string FailedToRetrieveSubtasksMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveSubtasksMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the task. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTaskMessage {
-            get {
+        internal static string FailedToRetrieveTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve tasks. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTasksMessage {
-            get {
+        internal static string FailedToRetrieveTasksMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTasksMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve team with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTeamByIdMessage {
-            get {
+        internal static string FailedToRetrieveTeamByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTeamByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the team and related users. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTeamMessage {
-            get {
+        internal static string FailedToRetrieveTeamMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTeamMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve teams. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTeamsMessage {
-            get {
+        internal static string FailedToRetrieveTeamsMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTeamsMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the team user with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTeamUserByIdMessage {
-            get {
+        internal static string FailedToRetrieveTeamUserByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTeamUserByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the list of team users. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTeamUsersMessage {
-            get {
+        internal static string FailedToRetrieveTeamUsersMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTeamUsersMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve transaction type with ID{0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTransactionTypeByIdMessage {
-            get {
+        internal static string FailedToRetrieveTransactionTypeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTransactionTypeByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve trasaction type. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveTransactionTypesMessage {
-            get {
+        internal static string FailedToRetrieveTransactionTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveTransactionTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve user roles. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveUserRolesMessage {
-            get {
+        internal static string FailedToRetrieveUserRolesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveUserRolesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the team user with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveUserTypeByIdMessage {
-            get {
+        internal static string FailedToRetrieveUserTypeByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveUserTypeByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve the list of team users. See inner exception for details.
         /// </summary>
-        internal static string FailedToRetrieveUserTypesMessage {
-            get {
+        internal static string FailedToRetrieveUserTypesMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToRetrieveUserTypesMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update charity. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateCharityMessage {
-            get {
+        internal static string FailedToUpdateCharityMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateCharityMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the company. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateCompanyMessage {
-            get {
+        internal static string FailedToUpdateCompanyMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateCompanyMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the content. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateContentMessage {
-            get {
+        internal static string FailedToUpdateContentMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateContentMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update content task. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateContentTaskMessage {
-            get {
+        internal static string FailedToUpdateContentTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateContentTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update currency. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateCurrencyMessage {
-            get {
+        internal static string FailedToUpdateCurrencyMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateCurrencyMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the customerIdentificationType. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateCustomerIdentificationTypeMessage {
-            get {
+        internal static string FailedToUpdateCustomerIdentificationTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateCustomerIdentificationTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the customerType. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateCustomerTypeMessage {
-            get {
+        internal static string FailedToUpdateCustomerTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateCustomerTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update entry type. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateEntryTypeMessage {
-            get {
+        internal static string FailedToUpdateEntryTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateEntryTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the genderType. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateGenderTypeMessage {
-            get {
+        internal static string FailedToUpdateGenderTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateGenderTypeMessage", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to update the customer. See inner exception for details.
+        /// </summary>
+        internal static string FailedToUpdateCustomerMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToUpdateCustomerMessage", resourceCulture);
+            }
+        }
+
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update goal. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateGoalMessage {
-            get {
+        internal static string FailedToUpdateGoalMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateGoalMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update insurance type. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateInsuranceTypeMessage {
-            get {
+        internal static string FailedToUpdateInsuranceTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateInsuranceTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update media. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateMediaMessage {
-            get {
+        internal static string FailedToUpdateMediaMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateMediaMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the performed subtask. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdatePerformedSubtaskMessage {
-            get {
+        internal static string FailedToUpdatePerformedSubtaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdatePerformedSubtaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the performed task. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdatePerformedTaskMessage {
-            get {
+        internal static string FailedToUpdatePerformedTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdatePerformedTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the project. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateProjectMessage {
-            get {
+        internal static string FailedToUpdateProjectMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateProjectMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update project user. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateProjectUserMessage {
-            get {
+        internal static string FailedToUpdateProjectUserMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateProjectUserMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update update. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateRecordStatusMessage {
-            get {
+        internal static string FailedToUpdateRecordStatusMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateRecordStatusMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the role. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateRoleMessage {
-            get {
+        internal static string FailedToUpdateRoleMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateRoleMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update set time. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateSetTimeMessage {
-            get {
+        internal static string FailedToUpdateSetTimeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateSetTimeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update subtask. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateSubtaskMessage {
-            get {
+        internal static string FailedToUpdateSubtaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateSubtaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the task. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateTaskMessage {
-            get {
+        internal static string FailedToUpdateTaskMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateTaskMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the team. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateTeamMessage {
-            get {
+        internal static string FailedToUpdateTeamMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateTeamMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the team user. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateTeamUserMessage {
-            get {
+        internal static string FailedToUpdateTeamUserMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateTeamUserMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update transaction type. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateTransactionTypeMessage {
-            get {
+        internal static string FailedToUpdateTransactionTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateTransactionTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to update the userType. See inner exception for details.
         /// </summary>
-        internal static string FailedToUpdateUserTypeMessage {
-            get {
+        internal static string FailedToUpdateUserTypeMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("FailedToUpdateUserTypeMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Gender Type not Found.
         /// </summary>
-        internal static string GenderTypeNotFoundMessage {
-            get {
+        internal static string GenderTypeNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("GenderTypeNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Goal not found.
         /// </summary>
-        internal static string GoalNotFoundMessage {
-            get {
+        internal static string GoalNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("GoalNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to ID mismatch.
         /// </summary>
-        internal static string IdMismatchMessage {
-            get {
+        internal static string IdMismatchMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("IdMismatchMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Insurance company find failure.
         /// </summary>
-        internal static string InsuranceCompanyFindFailureMessage {
-            get {
+        internal static string InsuranceCompanyFindFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("InsuranceCompanyFindFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Insurance company not found.
         /// </summary>
-        internal static string InsuranceCompanyNotFoundMessage {
-            get {
+        internal static string InsuranceCompanyNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("InsuranceCompanyNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Insurance company retrieval failure by name.
         /// </summary>
-        internal static string InsuranceCompanyRetrievalFailureByNameMessage {
-            get {
+        internal static string InsuranceCompanyRetrievalFailureByNameMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("InsuranceCompanyRetrievalFailureByNameMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Media not found.
         /// </summary>
-        internal static string MediaNotFoundMessage {
-            get {
+        internal static string MediaNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("MediaNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Not Found.
         /// </summary>
-        internal static string NotFoundMessage {
-            get {
+        internal static string NotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("NotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Password verification failed.
         /// </summary>
-        internal static string PasswordVerificationFailureMessage {
-            get {
+        internal static string PasswordVerificationFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("PasswordVerificationFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Performed subtask not found.
         /// </summary>
-        internal static string PerformedSubtaskNotFoundMessage {
-            get {
+        internal static string PerformedSubtaskNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("PerformedSubtaskNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Performed task not found.
         /// </summary>
-        internal static string PerformedTaskNotFoundMessage {
-            get {
+        internal static string PerformedTaskNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("PerformedTaskNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Premium line find failure.
         /// </summary>
-        internal static string PremiumLineFindFailureMessage {
-            get {
+        internal static string PremiumLineFindFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("PremiumLineFindFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Premium Line not found.
         /// </summary>
-        internal static string PremiumLineNotFoundMessage {
-            get {
+        internal static string PremiumLineNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("PremiumLineNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Premium line retrieval failure by Id.
         /// </summary>
-        internal static string PremiumLineRetrievalFailureByIdMessage {
-            get {
+        internal static string PremiumLineRetrievalFailureByIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("PremiumLineRetrievalFailureByIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project not found.
         /// </summary>
-        internal static string ProjectNotFoundMessage {
-            get {
+        internal static string ProjectNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("ProjectNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project User not found.
         /// </summary>
-        internal static string ProjectUserNotFoundMessage {
-            get {
+        internal static string ProjectUserNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("ProjectUserNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Set time not found.
         /// </summary>
-        internal static string SetTimeNotFoundMessage {
-            get {
+        internal static string SetTimeNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("SetTimeNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Subtask not found.
         /// </summary>
-        internal static string SubtaskNotFoundMessage {
-            get {
+        internal static string SubtaskNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("SubtaskNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System function find failure.
         /// </summary>
-        internal static string SystemFunctionFindFailureMessage {
-            get {
+        internal static string SystemFunctionFindFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("SystemFunctionFindFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System function not found.
         /// </summary>
-        internal static string SystemFunctionNotFoundMessage {
-            get {
+        internal static string SystemFunctionNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("SystemFunctionNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System function retrieval failure by name.
         /// </summary>
-        internal static string SystemFunctionRetrievalFailureByNameMessage {
-            get {
+        internal static string SystemFunctionRetrievalFailureByNameMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("SystemFunctionRetrievalFailureByNameMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Task not found.
         /// </summary>
-        internal static string TaskNotFoundMessage {
-            get {
+        internal static string TaskNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("TaskNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Team not found.
         /// </summary>
-        internal static string TeamNotFoundMessage {
-            get {
+        internal static string TeamNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("TeamNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Team user not found.
         /// </summary>
-        internal static string TeamUserNotFoundMessage {
-            get {
+        internal static string TeamUserNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("TeamUserNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Transaction type not found.
         /// </summary>
-        internal static string TransactionTypeNotFoundMessage {
-            get {
+        internal static string TransactionTypeNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("TransactionTypeNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to add the user.
         /// </summary>
-        internal static string UserAdditionFailureMessage {
-            get {
+        internal static string UserAdditionFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserAdditionFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to find the user by email.
         /// </summary>
-        internal static string UserEmailLookupFailureMessage {
-            get {
+        internal static string UserEmailLookupFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserEmailLookupFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to find the user. See inner exception for details.
         /// </summary>
-        internal static string UserFindFailureMessage {
-            get {
+        internal static string UserFindFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserFindFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to User not found.
         /// </summary>
-        internal static string UserNotFoundMessage {
-            get {
+        internal static string UserNotFoundMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserNotFoundMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve user with email {0}. See inner exception for details.
         /// </summary>
-        internal static string UserRetrievalFailureByEmailMessage {
-            get {
+        internal static string UserRetrievalFailureByEmailMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserRetrievalFailureByEmailMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve users. See inner exception for details.
         /// </summary>
-        internal static string UserRetrievalFailureMessage {
-            get {
+        internal static string UserRetrievalFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserRetrievalFailureMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to retrieve user with ID {0}. See inner exception for details.
         /// </summary>
-        internal static string UserRetrievalFailureWithIdMessage {
-            get {
+        internal static string UserRetrievalFailureWithIdMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserRetrievalFailureWithIdMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to An error occurred while updating the user with ID {0}.
         /// </summary>
-        internal static string UserUpdateFailureMessage {
-            get {
+        internal static string UserUpdateFailureMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("UserUpdateFailureMessage", resourceCulture);
             }
         }
