@@ -505,7 +505,7 @@
     <value>Failed to retrieve currencies with ID{0}. See inner exception for details</value>
   </data>
   <data name="FailedToRetrieveEntryTypeByIdMessage" xml:space="preserve">
-    <value>Failed to retrieve entry types with ID{0}. See inner exception for details</value>
+    <value>Failed to retrieve customers with ID{0}. See inner exception for details</value>
   </data>
   <data name="FailedToRetrieveEntryTypesMessage" xml:space="preserve">
     <value>Failed to retrieve entry type. See inner exception for details</value>
@@ -548,5 +548,23 @@
   </data>
   <data name="TransactionTypeNotFoundMessage" xml:space="preserve">
     <value>Transaction type not found</value>
+  </data>
+  <data name="CustomerNotFoundMessage" xml:space="preserve">
+    <value>Customer not found</value>
+  </data>
+  <data name="FailedToUpdateCustomerMessage" xml:space="preserve">
+    <value>Failed to update customers. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomersMessage" xml:space="preserve">
+    <value>Failed to retrieve customer. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCustomerMessage" xml:space="preserve">
+    <value>Failed to delete customer. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddCustomerMessage" xml:space="preserve">
+    <value>Failed to add customer. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomerByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve customers with ID{0}. See inner exception for details</value>
   </data>
 </root>

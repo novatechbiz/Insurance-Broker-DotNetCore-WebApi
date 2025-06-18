@@ -16,6 +16,7 @@ namespace InsuraNova.Data
         public DbSet<TransactionType> TransactionTypes { get; set; }
         public DbSet<InsuranceType> InsuranceTypes { get; set; }
         public DbSet<RecordStatus> RecordStatuses { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
