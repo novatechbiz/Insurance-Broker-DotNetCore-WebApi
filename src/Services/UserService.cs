@@ -11,6 +11,8 @@ namespace InsuraNova.Services
         Task<UserProfile> AddUserAsync(UserProfile userProfile);
         Task<UserProfile> UpdateUserAsync(UserProfile userProfile);
         Task<bool> DeleteUserAsync(int id);
+        Task UpdateRefreshTokenAsync(int userId, string refreshToken, DateTime refreshTokenExpiryTime);
+        Task ClearRefreshTokenAsync(int userId);
         Task<UserProfile?> GetUserByEmailAsync(string email);
         Task<bool> VerifyPassword(string hashedPassword, string enterPassword);
     }
@@ -46,14 +48,21 @@ namespace InsuraNova.Services
         {
             try
             {
-                if (string.IsNullOrEmpty(userProfile.UserPassword))
+                var existingUser = await _userRepository.GetUserByUserNameAsync(userProfile.UserName.Trim());
+                if (existingUser != null)
                 {
-                    userProfile.UserPassword = PasswordService.HashPassword(DefaultSettings.DefaultSecret); 
+                    throw new Exception($"A user with username '{userProfile.UserName}' already exists.");
                 }
+
+                userProfile.UserPassword = PasswordService.HashPassword(userProfile.UserPassword);
                 return await _userRepository.AddAsync(userProfile);
             }
             catch (Exception ex)
             {
+                if (ex.Message.Contains("already exists", StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new Exception(ApplicationMessages.UserAlreadyExistsMessage, ex);
+                }
                 throw new Exception(ApplicationMessages.UserAdditionFailureMessage, ex);
             }
         }
@@ -107,6 +116,41 @@ namespace InsuraNova.Services
             }
         }
 
+        public async Task UpdateRefreshTokenAsync(int userId, string refreshToken, DateTime refreshTokenExpiryTime)
+        {
+            try
+            {
+                var user = await _userRepository.GetByIdAsync(userId);
+                if (user == null)
+                    throw new Exception($"User with ID {userId} not found.");
 
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenExpiryTime = refreshTokenExpiryTime;
+
+                await _userRepository.UpdateAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update refresh token.", ex);
+            }
+        }
+
+        public async Task ClearRefreshTokenAsync(int userId)
+        {
+            try
+            {
+                var user = await _userRepository.GetByIdAsync(userId);
+                if (user != null)
+                {
+                    user.RefreshToken = null;
+                    user.RefreshTokenExpiryTime = null;
+                    await _userRepository.UpdateAsync(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update refresh token.", ex);
+            }
+        }
     }
 }

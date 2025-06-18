@@ -465,6 +465,84 @@
   <data name="FailedToRetrieveContentFrequenciesMessage" xml:space="preserve">
     <value>Failed to retrieve content frequencies. See inner exception for details</value>
   </data>
+  <data name="GenderTypeNotFoundMessage" xml:space="preserve">
+    <value>Gender Type not Found</value>
+  </data>
+  <data name="FailedToRetrieveGenderTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve content tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddGenderTypeMessage" xml:space="preserve">
+    <value>Failed to add the gednerType. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteGenderTypeMessage" xml:space="preserve">
+    <value>Failed to delete the genderType. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateGenderTypeMessage" xml:space="preserve">
+    <value>Failed to update the genderType. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveGenderTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve genderType with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveRolesMessage" xml:space="preserve">
+    <value>Failed to retrieve content tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveRoleByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve media with ID {id}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddRoleMessage" xml:space="preserve">
+    <value>Failed to add the role. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateRoleMessage" xml:space="preserve">
+    <value>Failed to update the role. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteRoleMessage" xml:space="preserve">
+    <value>Failed to delete the role. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomerTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve content tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomerTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve customerType with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddCustomerTypeMessage" xml:space="preserve">
+    <value>Failed to add the Customer. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateCustomerTypeMessage" xml:space="preserve">
+    <value>Failed to update the customerType. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCustomerTypeMessage" xml:space="preserve">
+    <value>Failed to delete the customerType. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomerIdentificationTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve content tasks. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomerIdentificationTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve customerIdentificationType with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateCustomerIdentificationTypeMessage" xml:space="preserve">
+    <value>Failed to update the customerIdentificationType. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCustomerIdentificationTypeMessage" xml:space="preserve">
+    <value>Failed to delete the customerIdentificationType. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveUserTypesMessage" xml:space="preserve">
+    <value>Failed to retrieve the list of team users. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveUserTypeByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve the team user with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddUserTypeMessage" xml:space="preserve">
+    <value>Failed to add the userType. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateUserTypeMessage" xml:space="preserve">
+    <value>Failed to update the userType. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteUserTypeMessage" xml:space="preserve">
+    <value>Failed to delete the userType. See inner exception for details</value>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
   <data name="EntityNotFoundMessage" xml:space="preserve">
     <value>Entry type not found</value>
   </data>
@@ -543,11 +621,47 @@
   <data name="FailedToUpdateTransactionTypeMessage" xml:space="preserve">
     <value>Failed to update transaction type. See inner exception for details</value>
   </data>
-  <data name="NotFoundMessage" xml:space="preserve">
-    <value>Not Found</value>
-  </data>
   <data name="TransactionTypeNotFoundMessage" xml:space="preserve">
     <value>Transaction type not found</value>
+  </data>
+  <data name="CompanyTypeFindFailureMessage" xml:space="preserve">
+    <value>Company type find failure</value>
+  </data>
+  <data name="CompanyTypeNotFoundMessage" xml:space="preserve">
+    <value>Company type not found</value>
+  </data>
+  <data name="CompanyTypeRetrievalFailureByNameMessage" xml:space="preserve">
+    <value>Company type retrieval failure by name</value>
+  </data>
+  <data name="InsuranceCompanyFindFailureMessage" xml:space="preserve">
+    <value>Insurance company find failure</value>
+  </data>
+  <data name="InsuranceCompanyNotFoundMessage" xml:space="preserve">
+    <value>Insurance company not found</value>
+  </data>
+  <data name="InsuranceCompanyRetrievalFailureByNameMessage" xml:space="preserve">
+    <value>Insurance company retrieval failure by name</value>
+  </data>
+  <data name="PremiumLineFindFailureMessage" xml:space="preserve">
+    <value>Premium line find failure</value>
+  </data>
+  <data name="PremiumLineNotFoundMessage" xml:space="preserve">
+    <value>Premium Line not found</value>
+  </data>
+  <data name="PremiumLineRetrievalFailureByIdMessage" xml:space="preserve">
+    <value>Premium line retrieval failure by Id</value>
+  </data>
+  <data name="SystemFunctionFindFailureMessage" xml:space="preserve">
+    <value>System function find failure</value>
+  </data>
+  <data name="SystemFunctionNotFoundMessage" xml:space="preserve">
+    <value>System function not found</value>
+  </data>
+  <data name="SystemFunctionRetrievalFailureByNameMessage" xml:space="preserve">
+    <value>System function retrieval failure by name</value>
+  </data>
+  <data name="UserAlreadyExistsMessage" xml:space="preserve">
+    <value>Username already exists</value>
   </data>
   <data name="CustomerNotFoundMessage" xml:space="preserve">
     <value>Customer not found</value>

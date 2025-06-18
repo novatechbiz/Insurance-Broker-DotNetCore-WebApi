@@ -1,5 +1,7 @@
-﻿
+﻿using InsuraNova.Dto;
+using InsuraNova.Handlers;
 using InsuraNova.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InsuraNova.Endpoints
 {
@@ -7,41 +9,82 @@ namespace InsuraNova.Endpoints
     {
         public static void MapAuthEndpoints(this IEndpointRouteBuilder app)
         {
-            
-            app.MapPost("/login", async (IMediator mediator, LoginRequest loginRequest, ILogger<Program> logger, HttpContext context) =>
+            app.MapPost("/login", async (LoginRequest loginRequest, IMediator mediator, IValidator<LoginRequest> validator, HttpContext context, ILogger<Program> logger) =>
             {
                 try
                 {
                     logger.LogInformation("Attempting to log in user with username: {Username}", loginRequest.Username);
-                    LoginResponse? result = await mediator.Send(loginRequest);
-                    if (result == null)
+
+                    var validationResult = validator.Validate(loginRequest);
+                    if (!validationResult.IsValid)
                     {
-                        logger.LogWarning("Login attempt failed for username: {Username}. An error occurred during login.", loginRequest.Username);
-                        return Results.BadRequest(new { success = false, message = "An error occurred during login." });
+                        return Results.BadRequest(ResponseHelper.CreateFailureResponse<object>(
+                            ApiAction.Read,
+                            "Validation failed: " + string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage))
+                        ));
                     }
+
+                    LoginResponse? result = await mediator.Send(new LoginCommand(loginRequest));
 
                     if (!result.Success)
                     {
-                        logger.LogWarning("Login attempt failed for username: {Username}. Reason: {Reason}", loginRequest.Username, result.Message);
-                        return Results.BadRequest(new { success = false, message = result.Message });
+                        return Results.BadRequest(ResponseHelper.CreateFailureResponse<object>(
+                            ApiAction.Read,
+                            result.Message ?? "Login failed. Please check your credentials."
+                        ));
                     }
-                    logger.LogInformation("Successfully logged in user with username: {Username}", loginRequest.Username);
-                    return Results.Ok(new
-                    {
-                        success = true,
-                        message = result.Message,
-                        token = result.Token,
-                        refreshToken = result.RefreshToken,
-                        user = result.User
-                    });
+
+                    // Return success response
+                    return Results.Ok(ResponseHelper.CreateSuccessResponse(result, ApiAction.Read));
                 }
                 catch (Exception ex)
                 {
                     return ErrorHelper.HandleExceptionWithLogging<object>(logger, ex, context, ApiAction.Read);
                 }
-
             })
             .WithName("GenerateToken")
+            .WithTags("Auth");
+
+            app.MapPost("/logout", [Authorize] async (IMediator mediator, HttpContext context, ILogger<Program> logger) =>
+            {
+                try
+                {
+                    logger.LogInformation("Attempting to log out user...");
+                    LogOutResponse? result = await mediator.Send(new LogoutCommand());
+                    return Results.Ok(ResponseHelper.CreateSuccessResponse(result, ApiAction.Read));
+                }
+                catch (Exception ex)
+                {
+                    return ErrorHelper.HandleExceptionWithLogging<object>(logger, ex, context, ApiAction.Read);
+                }
+            })
+            .WithName("Logout")
+            .WithTags("Auth")
+            .RequireAuthorization();
+
+            app.MapPost("/refresh-token", [AllowAnonymous] async (IMediator mediator, HttpContext context, ILogger<Program> logger) =>
+            {
+                try
+                {
+                    logger.LogInformation("Attempting to get new access token from refresh token...");
+                    LoginResponse? result = await mediator.Send(new RefreshTokenCommand());
+
+                    if (!result.Success)
+                    {
+                        return Results.BadRequest(ResponseHelper.CreateFailureResponse<object>(
+                            ApiAction.Read,
+                            result.Message ?? "refresh failed.."
+                        ));
+                    }
+
+                    return Results.Ok(ResponseHelper.CreateSuccessResponse(result, ApiAction.Read));
+                }
+                catch (Exception ex)
+                {
+                    return ErrorHelper.HandleExceptionWithLogging<object>(logger, ex, context, ApiAction.Read);
+                }
+            })
+            .WithName("RefreshToken")
             .WithTags("Auth");
         }
     }

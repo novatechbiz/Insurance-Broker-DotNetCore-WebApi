@@ -1,59 +1,50 @@
-﻿using InsuraNova.Helpers;
+﻿using AutoMapper;
+using InsuraNova.Dto;
+using InsuraNova.Helpers;
 using InsuraNova.Repositories;
 using InsuraNova.Services;
-using InsuraNova.Validation;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace InsuraNova.Handlers
 {
-    public class AuthHandlers : IRequestHandler<LoginRequest, LoginResponse>
+    // Commands
+    public record LoginCommand(LoginRequest LoginRequest) : IRequest<LoginResponse>;
+    public record LogoutCommand : IRequest<LogOutResponse>;
+    public record RefreshTokenCommand : IRequest<LoginResponse>;
+
+    // Handlers
+    public class LoginHandler(IUserRepository userRepository, IUserService userService, IMapper mapper, IHttpContextAccessor httpContextAccessor, ILogger<LoginHandler> logger)
+        : IRequestHandler<LoginCommand, LoginResponse>
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IUserService _userService;
-        private readonly ILogger<AuthHandlers> _logger;
-        private readonly LoginRequestValidation _validator;
+        private readonly IUserRepository _userRepository = userRepository;
+        private readonly IUserService _userService = userService;
+        private readonly IMapper _mapper = mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly ILogger<LoginHandler> _logger = logger;
 
-        public AuthHandlers(IUserRepository userRepository, IUserService userService, ILogger<AuthHandlers> logger, LoginRequestValidation validator)
-        {
-            _userRepository = userRepository;
-            _userService = userService;
-            _logger = logger;
-            _validator = validator;
-        }
-
-        public async Task<LoginResponse> Handle(LoginRequest loginRequest, CancellationToken cancellationToken)
+        public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             try
             {
+                var loginRequest = request.LoginRequest;
                 _logger.LogInformation("Login attempt with email: {Username}", loginRequest.Username);
-
-                // Validate the login request
-                var validationResult = _validator.Validate(loginRequest);
-                if (!validationResult.IsValid)
-                {
-                    _logger.LogWarning("Validation failed for email: {Username}. Errors: {Errors}", loginRequest.Username, string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
-                    return new LoginResponse
-                    {
-                        Success = false,
-                        Message = "Validation failed: " + string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage))
-                    };
-                }
 
                 // Check if the user exists by email
                 var user = await _userRepository.GetUserByUserNameAsync(loginRequest.Username.Trim());
                 if (user == null)
                 {
-                    _logger.LogWarning("User not found for email: {Username}", loginRequest.Username.Trim());
+                    _logger.LogWarning("User not found Username: {Username}", loginRequest.Username.Trim());
                     return new LoginResponse
                     {
                         Success = false,
-                        Message = "Email does not exist."
+                        Message = "Username does not exist."
                     };
                 }
 
                 // Validate the password
-                //var isValidPassword = await _userService.VerifyPassword(loginRequest.Password.Trim(), user.UserPassword);
-                //if (!isValidPassword)
-                if(loginRequest.Password.Trim()!= user.UserPassword)
+                var isValidPassword = await _userService.VerifyPassword(loginRequest.Password.Trim(), user.UserPassword);
+                if (!isValidPassword)
                 {
                     _logger.LogWarning("Incorrect password for username: {Username}", loginRequest.Username.Trim());
                     return new LoginResponse
@@ -67,17 +58,22 @@ namespace InsuraNova.Handlers
                 var token = TokenHelper.GenerateToken(user);
                 var refreshToken = TokenHelper.GenerateRefreshToken(user);
 
+                // Store refresh token in the database or override the existing refresh token
+                var refreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+                await _userService.UpdateRefreshTokenAsync(user.Id, refreshToken, refreshTokenExpiry);
+
+                // Set refresh token cookie
+                TokenHelper.SetRefreshTokenCookie(_httpContextAccessor.HttpContext.Response, refreshToken, refreshTokenExpiry);
+
+                // Map the user to the UserDto
+                var userDto = _mapper.Map<UserDto>(user);
+
                 var response = new LoginResponse
                 {
                     Success = true,
                     Message = "Login successful",
                     Token = token,
-                    RefreshToken = refreshToken,
-                    User = new UserProfile
-                    {
-                        Id = user.Id,
-                        UserName = user.UserName
-                    }
+                    User = userDto,
                 };
 
                 _logger.LogInformation("Login successful for username: {Username}", loginRequest.Username.Trim());
@@ -89,5 +85,130 @@ namespace InsuraNova.Handlers
                 throw new Exception("An error occurred during login. See inner exception for details.", ex);
             }
         }
+    }
+
+    public class LogoutHandler(IUserService userService, IHttpContextAccessor httpContextAccessor, ITokenBlacklistService tokenBlacklistService, ILogger<LogoutHandler> logger)
+        : IRequestHandler<LogoutCommand, LogOutResponse>
+    {
+        private readonly IUserService _userService = userService;
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly ITokenBlacklistService _tokenBlacklistService = tokenBlacklistService;
+        private readonly ILogger<LogoutHandler> _logger = logger;
+
+        public async Task<LogOutResponse> Handle(LogoutCommand request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var userIdClaim = _httpContextAccessor.HttpContext.User.FindFirst("userId")?.Value;
+                var jtiClaim = _httpContextAccessor.HttpContext.User.FindFirst(JwtRegisteredClaimNames.Jti)?.Value;
+                var expClaim = _httpContextAccessor.HttpContext.User.FindFirst(JwtRegisteredClaimNames.Exp)?.Value;
+
+                if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(jtiClaim) || string.IsNullOrEmpty(expClaim))
+                    return new LogOutResponse { Success = false, Message = "Unauthorized" };
+
+                int userId = int.Parse(userIdClaim);
+                var expUnix = long.Parse(expClaim);
+                var expiryDate = DateTimeOffset.FromUnixTimeSeconds(expUnix).UtcDateTime;
+
+                // Clear the refresh token from the database
+                await _userService.ClearRefreshTokenAsync(userId);
+
+                // Clear the refresh token cookie
+                TokenHelper.ClearRefreshTokenCookie(_httpContextAccessor.HttpContext.Response);
+
+                // Blacklist the JWT token
+                await _tokenBlacklistService.BlacklistTokenAsync(jtiClaim, expiryDate);
+
+                _logger.LogInformation("Logout successful for user ID: {UserId}", userId);
+
+                return new LogOutResponse
+                {
+                    Success = true,
+                    Message = "Logout successful."
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while processing logout.");
+                return new LogOutResponse
+                {
+                    Success = false,
+                    Message = "An error occurred during logout. See inner exception for details."
+                };
+            }
+        }
+    }
+
+    public class RefreshTokenHandler(IUserService userService, IHttpContextAccessor httpContextAccessor, ITokenBlacklistService tokenBlacklistService, IMapper mapper, ILogger<LogoutHandler> logger)
+        : IRequestHandler<RefreshTokenCommand, LoginResponse>
+    {
+        private readonly IUserService _userService = userService;
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly ITokenBlacklistService _tokenBlacklistService = tokenBlacklistService;
+        private readonly IMapper _mapper = mapper;
+        private readonly ILogger<LogoutHandler> _logger = logger;
+
+        public async Task<LoginResponse> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var httpContext = _httpContextAccessor.HttpContext;
+                var refreshToken = TokenHelper.GetRefreshTokenFromCookie(httpContext.Request);
+
+                if (string.IsNullOrEmpty(refreshToken))
+                {
+                    return new LoginResponse { Success = false, Message = "Refresh token not found." };
+                }
+
+                // Validate refresh token format and expiry
+                if (!TokenHelper.ValidateToken(refreshToken, out var principal))
+                {
+                    return new LoginResponse { Success = false, Message = "Invalid refresh token." };
+                }
+
+                var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return new LoginResponse { Success = false, Message = "Invalid token claims." };
+                }
+
+                var user = await _userService.GetUserByIdAsync(int.Parse(userId));
+                if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+                {
+                    return new LoginResponse { Success = false, Message = "Refresh token expired or invalid." };
+                }
+
+                // Blacklist current access token if present
+                var accessToken = httpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+                if (TokenHelper.ValidateToken(accessToken, out var accessPrincipal))
+                {
+                    var jti = accessPrincipal.FindFirstValue(JwtRegisteredClaimNames.Jti);
+                    var expClaim = accessPrincipal.FindFirstValue(JwtRegisteredClaimNames.Exp);
+
+                    if (!string.IsNullOrEmpty(jti) && long.TryParse(expClaim, out long expSeconds))
+                    {
+                        var expTime = DateTimeOffset.FromUnixTimeSeconds(expSeconds).UtcDateTime;
+                        await _tokenBlacklistService.BlacklistTokenAsync(jti, expTime);
+                    }
+                }
+
+                // Issue new tokens
+                var newAccessToken = TokenHelper.GenerateToken(user);
+
+                return new LoginResponse
+                {
+                    Success = true,
+                    Message = "Token refreshed successfully",
+                    Token = newAccessToken,
+                    User = _mapper.Map<UserDto>(user)
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while refreshing token.");
+                throw new Exception("An error occurred during token refresh. See inner exception for details.", ex);
+            }
+        }
+
     }
 }

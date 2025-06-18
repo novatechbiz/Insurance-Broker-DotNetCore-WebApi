@@ -26,7 +26,7 @@ namespace InsuraNova.Endpoints
             .WithTags("Users")
             .RequireAuthorization();
 
-            app.MapPost("/users", [Authorize] async (UserProfile user, IMediator mediator, IValidator<UserProfile> validator, HttpContext context, ILogger<Program> logger) =>
+            app.MapPost("/users", [AllowAnonymous] async (UserProfile user, IMediator mediator, IValidator<UserProfile> validator, HttpContext context, ILogger<Program> logger) =>
             {
                 try
                 {
@@ -48,8 +48,7 @@ namespace InsuraNova.Endpoints
                 }
             })
             .WithName("CreateUser")
-            .WithTags("Users")
-            .RequireAuthorization();
+            .WithTags("Users");
 
             app.MapPut("/users/{id}", [Authorize] async (int id, UserProfile user, IMediator mediator, IValidator<UserProfile> validator, HttpContext context, ILogger<Program> logger) =>
             {
