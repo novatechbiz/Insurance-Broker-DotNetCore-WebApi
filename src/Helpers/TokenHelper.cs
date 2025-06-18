@@ -77,6 +77,7 @@ namespace InsuraNova.Helpers
             try
             {
                 principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+
                 return validatedToken != null;
             }
             catch
@@ -97,6 +98,24 @@ namespace InsuraNova.Helpers
             };
 
             response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+        }
+
+        public static void ClearRefreshTokenCookie(HttpResponse response)
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(-1)
+            };
+            response.Cookies.Append("refreshToken", "", cookieOptions);
+        }
+
+        public static string GetRefreshTokenFromCookie(HttpRequest request)
+        {
+            request.Cookies.TryGetValue("refreshToken", out var refreshToken);
+            return refreshToken;
         }
 
     }

@@ -12,6 +12,7 @@ namespace InsuraNova.Services
         Task<UserProfile> UpdateUserAsync(UserProfile userProfile);
         Task<bool> DeleteUserAsync(int id);
         Task UpdateRefreshTokenAsync(int userId, string refreshToken, DateTime refreshTokenExpiryTime);
+        Task ClearRefreshTokenAsync(int userId);
         Task<UserProfile?> GetUserByEmailAsync(string email);
         Task<bool> VerifyPassword(string hashedPassword, string enterPassword);
     }
@@ -127,6 +128,24 @@ namespace InsuraNova.Services
                 user.RefreshTokenExpiryTime = refreshTokenExpiryTime;
 
                 await _userRepository.UpdateAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update refresh token.", ex);
+            }
+        }
+
+        public async Task ClearRefreshTokenAsync(int userId)
+        {
+            try
+            {
+                var user = await _userRepository.GetByIdAsync(userId);
+                if (user != null)
+                {
+                    user.RefreshToken = null;
+                    user.RefreshTokenExpiryTime = null;
+                    await _userRepository.UpdateAsync(user);
+                }
             }
             catch (Exception ex)
             {
