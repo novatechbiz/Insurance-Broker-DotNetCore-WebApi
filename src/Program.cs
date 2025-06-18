@@ -1,9 +1,12 @@
 using Amazon.SimpleEmail;
+using AspNetCoreRateLimit;
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using InsuraNova.Configurations;
 using InsuraNova.Data;
 using InsuraNova.Endpoints;
 using InsuraNova.Helpers;
+using InsuraNova.Mappings;
 using InsuraNova.Middleware;
 using InsuraNova.Repositories;
 using InsuraNova.Services;
@@ -34,6 +37,16 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Add HttpContextAccessor to access the current HTTP context
+builder.Services.AddHttpContextAccessor();
+
+// Add MemoryCache and configure IP rate limiting
+builder.Services.AddMemoryCache();
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+builder.Services.AddInMemoryRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -46,6 +59,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Add Amazon SES client
 builder.Services.AddAWSService<IAmazonSimpleEmailService>();
+
+// Register AutoMapper and create a mapping configuration
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 
 // Add Repositories
@@ -99,11 +121,29 @@ builder.Services.AddValidatorsFromAssemblyContaining<PremiumLineValidator>();
 builder.Services.AddFluentValidationAutoValidation();
 
 // Add Authentication and Authorization
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//}).AddJwtBearer(options =>
+//{
+//    options.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateIssuer = true,
+//        ValidateAudience = true,
+//        ValidateLifetime = true,
+//        ValidateIssuerSigningKey = true,
+//        ValidIssuer = TokenHelper.Issuer,
+//        ValidAudience = TokenHelper.Audience,
+//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(TokenHelper.SecretKey))
+//    };
+//});
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
+})
+.AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -116,6 +156,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(TokenHelper.SecretKey))
     };
 });
+
 
 builder.Services.AddAuthorization();
 
@@ -168,6 +209,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Use Rate Limiting middleware
+app.UseIpRateLimiting();
 
 // Use authentication middleware
 app.UseAuthentication();

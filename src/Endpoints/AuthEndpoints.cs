@@ -31,7 +31,6 @@ namespace InsuraNova.Endpoints
                         success = true,
                         message = result.Message,
                         token = result.Token,
-                        refreshToken = result.RefreshToken,
                         user = result.User
                     });
                 }
