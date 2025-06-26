@@ -75,6 +75,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Add Amazon SES client
 builder.Services.AddAWSService<IAmazonSimpleEmailService>();
 
+
+// Add MailService
+builder.Services.Configure<EmailConfig>(builder.Configuration.GetSection("EmailConfig"));
+builder.Services.AddTransient<IEmailService, EmailService>();
+
 // Register AutoMapper and create a mapping configuration
 var mappingConfig = new MapperConfiguration(mc =>
 {

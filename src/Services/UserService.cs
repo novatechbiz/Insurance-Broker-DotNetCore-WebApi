@@ -1,6 +1,7 @@
 ﻿using InsuraNova.Helpers;
 using InsuraNova.Repositories;
 using InsuraNova.Resources;
+using System.Net;
 
 namespace InsuraNova.Services
 {
@@ -14,7 +15,10 @@ namespace InsuraNova.Services
         Task UpdateRefreshTokenAsync(int userId, string refreshToken, DateTime refreshTokenExpiryTime);
         Task ClearRefreshTokenAsync(int userId);
         Task<UserProfile?> GetUserByEmailAsync(string email);
+        Task<UserProfile> GetUserByResetTokenAsync(string resetToken);
         Task<bool> VerifyPassword(string hashedPassword, string enterPassword);
+        Task SaveResetTokenAsync(int userId, string resetToken, DateTime resetTokenExpiryTime);
+        Task PasswordReset(int userId, string newPassword);
     }
     public class UserService(IUserRepository userRepository) : IUserService
     {
@@ -90,11 +94,11 @@ namespace InsuraNova.Services
                 throw new Exception(string.Format(ApplicationMessages.DeleteUserFailureMessage, id), ex);
             }
         }
-        public async Task<UserProfile> GetUserByEmailAsync(string userName)
+        public async Task<UserProfile> GetUserByEmailAsync(string email)
         {
             try
             {
-                return await  _userRepository.FindAsync(u => u.UserName == userName);
+                return await  _userRepository.FindAsync(u => u.Email == email);
             }
             catch (Exception ex)
             {
@@ -150,6 +154,67 @@ namespace InsuraNova.Services
             catch (Exception ex)
             {
                 throw new Exception("Failed to update refresh token.", ex);
+            }
+        }
+
+        public Task SaveResetTokenAsync(int userId, string resetToken, DateTime resetTokenExpiryTime)
+        {
+            try
+            {
+                var user = _userRepository.GetByIdAsync(userId).Result;
+                if (user == null)
+                {
+                    throw new Exception($"User with ID {userId} not found.");
+                }
+                    
+                user.ResetToken = resetToken;
+                user.ResetTokenExpiryTime = resetTokenExpiryTime;
+                return _userRepository.UpdateAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to save reset token.", ex);
+            }
+        }
+
+        public Task<UserProfile> GetUserByResetTokenAsync(string resetToken)
+        {
+            try
+            {
+                var encodedToken = WebUtility.UrlEncode(resetToken);
+
+                var user = _userRepository.FindAsync(u => u.ResetToken == encodedToken && u.ResetTokenExpiryTime > DateTime.UtcNow);
+                if (user == null)
+                {
+                    throw new Exception(ApplicationMessages.UserResetTokenNotFoundMessage);
+                }
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ApplicationMessages.UserResetTokenLookupFailureMessage, ex);
+            }
+        }
+
+        public Task PasswordReset(int userId, string newPassword)
+        {
+            try
+            {
+                var user = _userRepository.GetByIdAsync(userId).Result;
+                if (user == null)
+                {
+                    throw new Exception($"User with ID {userId} not found.");
+                }
+                user.UserPassword = newPassword;
+                user.ResetToken = null; // Clear reset token after successful password reset
+                user.ResetTokenExpiryTime = null; // Clear reset token expiry time
+
+                return _userRepository.UpdateAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ApplicationMessages.PasswordResetFailureMessage, ex);
+
             }
         }
     }

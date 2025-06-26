@@ -86,6 +86,40 @@ namespace InsuraNova.Endpoints
             })
             .WithName("RefreshToken")
             .WithTags("Auth");
+
+            app.MapPost("/forgot-password", [AllowAnonymous] async (ForgotPasswordCommand command, IMediator mediator, ILogger<Program> logger) =>
+            {
+                try
+                {
+                    await mediator.Send(command);
+                    logger.LogInformation("Forgot password request handled for {Email}", command.Email);
+                    return Results.Ok("If your email is registered, a reset link has been sent.");
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Error processing forgot password for {Email}", command.Email);
+                    return Results.Problem("An error occurred while processing your request.");
+                }
+            })
+            .WithName("ForgotPassword")
+            .WithTags("Auth");
+
+            app.MapPost("/reset-password", [AllowAnonymous] async (ResetPasswordCommand command, IMediator mediator, ILogger<Program> logger) =>
+            {
+                try
+                {
+                    await mediator.Send(command);
+                    logger.LogInformation("Password reset successful");
+                    return Results.Ok("Your password has been reset successfully.");
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Error resetting password for {Email}");
+                    return Results.Problem("An error occurred while resetting your password.");
+                }
+            })
+            .WithName("ResetPassword")
+            .WithTags("Auth");
         }
     }
 }

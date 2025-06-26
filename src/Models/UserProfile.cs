@@ -36,7 +36,11 @@ namespace InsuraNova.Models
         [StringLength(400)]
         public string? RefreshToken { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? RefreshTokenExpiryTime { get; set; }
+
+        [StringLength(400)]
+        public string? ResetToken { get; set; }
+
+        public DateTime? ResetTokenExpiryTime { get; set; }
     }
 }

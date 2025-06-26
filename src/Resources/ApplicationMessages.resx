@@ -663,4 +663,28 @@
   <data name="UserAlreadyExistsMessage" xml:space="preserve">
     <value>Username already exists</value>
   </data>
+  <data name="FailedToRetrieveCustomersMessage" xml:space="preserve">
+    <value>Failed to retrieve customers </value>
+  </data>
+  <data name="FailedToRetrieveCustomerByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve customer with ID {0}. See inner exception for details</value>
+  </data>
+  <data name="FailedToAddCustomerMessage" xml:space="preserve">
+    <value>Failed to add the customer. See inner exception for details</value>
+  </data>
+  <data name="FailedToUpdateCustomerMessage" xml:space="preserve">
+    <value>Failed to update customer. See inner exception for details</value>
+  </data>
+  <data name="FailedToDeleteCustomerMessage" xml:space="preserve">
+    <value>Failed to delete customer. See inner exception for details</value>
+  </data>
+  <data name="UserResetTokenLookupFailureMessage" xml:space="preserve">
+    <value>Failed to fetch user by reset  token</value>
+  </data>
+  <data name="UserResetTokenNotFoundMessage" xml:space="preserve">
+    <value>User not found for given reset token</value>
+  </data>
+  <data name="PasswordResetFailureMessage" xml:space="preserve">
+    <value>Failed to reset password</value>
+  </data>
 </root>
