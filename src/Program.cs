@@ -43,16 +43,20 @@ builder.Services.AddCors(options =>
 // Add HttpContextAccessor to access the current HTTP context
 builder.Services.AddHttpContextAccessor();
 
-// Configure Redis cache for rate limiting
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = builder.Configuration.GetConnectionString("RadisConnection");
-});
+// Add In Memory Caching
+builder.Services.AddMemoryCache();
 
-builder.Services.AddRedisRateLimiting();
-builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+// Add the necessary rate limiting services
+builder.Services.AddInMemoryRateLimiting();
+
+// Add the rate limit configuration from the appsettings
 builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
 builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+
+// Add the rate limit configuration and services to the DI container
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 
 
 // Configure Radis

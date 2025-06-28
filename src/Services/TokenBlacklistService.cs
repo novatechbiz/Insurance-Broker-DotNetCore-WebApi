@@ -1,8 +1,7 @@
-﻿using StackExchange.Redis;
+﻿using Microsoft.Extensions.Caching.Memory;
 
 namespace InsuraNova.Services
 {
-
     public interface ITokenBlacklistService
     {
         Task BlacklistTokenAsync(string jti, DateTime expires);
@@ -11,11 +10,11 @@ namespace InsuraNova.Services
 
     public class TokenBlacklistService : ITokenBlacklistService
     {
-        private readonly IDatabase _redis;
+        private readonly IMemoryCache _memoryCache;
 
-        public TokenBlacklistService(IConnectionMultiplexer radis)
+        public TokenBlacklistService(IMemoryCache memoryCache)
         {
-            _redis = radis.GetDatabase();
+            _memoryCache = memoryCache;
         }
 
         public async Task BlacklistTokenAsync(string jti, DateTime expires)
@@ -27,12 +26,14 @@ namespace InsuraNova.Services
                 expiryTimeSpan = TimeSpan.FromMinutes(5);
             }
 
-            await _redis.StringSetAsync($"blacklist:{jti}", "true", expiryTimeSpan);
+            // Store the token in the memory cache with an expiry time
+            _memoryCache.Set($"blacklist:{jti}", true, expiryTimeSpan);
         }
 
         public async Task<bool> IsTokenBlacklistedAsync(string jti)
         {
-            return await _redis.KeyExistsAsync($"blacklist:{jti}");
+            // Check if the token is blacklisted in memory cache
+            return _memoryCache.TryGetValue($"blacklist:{jti}", out _);
         }
     }
 }
