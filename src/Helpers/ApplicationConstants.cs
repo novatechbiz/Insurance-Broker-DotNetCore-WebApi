@@ -40,5 +40,12 @@
         public const string DefaultSecret = "SedaragiRo25!";
         public const int ResetPasswordExpiryInMinutes = 1;
     }
-  
+
+    public static class ApplicationTypes
+    {
+        public const string Web = "Web";
+        public const string Mobile = "Mobile";
+        public const string Desktop = "Desktop";
+    }
+
 }

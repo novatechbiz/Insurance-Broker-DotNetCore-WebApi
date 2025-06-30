@@ -10,8 +10,8 @@ namespace InsuraNova.Helpers
         public static readonly string SecretKey = "a5z8i2Jt7nGxP9lB3vM6sQbf3628b9-0a38-4efc-be2d-2b2cd255fe680";
         public static readonly string Issuer = "https://greenalpha.lk";
         public static readonly string Audience = "https://greenalpha.lk";
-        private static readonly TimeSpan TokenLifetime = TimeSpan.FromHours(10);
-        private static readonly TimeSpan RefreshTokenLifetime = TimeSpan.FromDays(7);
+        private static readonly TimeSpan TokenLifetime = TimeSpan.FromHours(2);
+        private static readonly TimeSpan RefreshTokenLifetime = TimeSpan.FromDays(30);
 
         public static string GenerateToken(UserProfile user)
         {
