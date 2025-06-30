@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using InsuraNova.Configurations;
 using InsuraNova.Dto;
 using InsuraNova.Helpers;
 using InsuraNova.Repositories;
 using InsuraNova.Services;
+using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
@@ -218,11 +220,12 @@ namespace InsuraNova.Handlers
 
     }
 
-    public class ForgotPasswordHandler(IUserService userService, IEmailService emailService, ILogger<ForgotPasswordHandler> logger)
+    public class ForgotPasswordHandler(IUserService userService, IEmailService emailService, IOptions<ResetPasswordUrlConfig> urlConfig, ILogger<ForgotPasswordHandler> logger)
         : IRequestHandler<ForgotPasswordCommand, Unit>
     {
         private readonly IUserService _userService = userService;
         private readonly IEmailService _emailService = emailService;
+        private readonly IOptions<ResetPasswordUrlConfig> _urlConfig = urlConfig;
         private readonly ILogger<ForgotPasswordHandler> _logger = logger;
         public async Task<Unit> Handle(ForgotPasswordCommand request, CancellationToken cancellationToken)
         {
@@ -238,11 +241,12 @@ namespace InsuraNova.Handlers
             var resetLink = "";
             if (request.Type == ApplicationTypes.Web)
             {
-                resetLink = $"http://localhost:3000/reset-password?token={token}";
+                resetLink = $"{_urlConfig.Value.WebLink}?token={token}";
+                _logger.LogInformation("reset link: {resetLink}", resetLink);
             }
             else if (request.Type == ApplicationTypes.Mobile)
             {
-                resetLink = $"{request.Type}://reset-password?token={token}";
+                resetLink = $"{_urlConfig.Value.MobileLink}?token={token}";
             }
             else
             {

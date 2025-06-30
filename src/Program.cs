@@ -84,6 +84,9 @@ builder.Services.AddAWSService<IAmazonSimpleEmailService>();
 builder.Services.Configure<EmailConfig>(builder.Configuration.GetSection("EmailConfig"));
 builder.Services.AddTransient<IEmailService, EmailService>();
 
+// Map ResetPasswordUrlConfig to configuration section
+builder.Services.Configure<ResetPasswordUrlConfig>(builder.Configuration.GetSection("ResetPasswordRedirectLinks"));
+
 // Register AutoMapper and create a mapping configuration
 var mappingConfig = new MapperConfiguration(mc =>
 {
