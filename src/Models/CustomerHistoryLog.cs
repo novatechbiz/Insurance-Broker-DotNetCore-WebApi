@@ -1,13 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InsuraNova.Models
 {
-    [Table("Customer")]
-    public class Customer
+    [Table("CustomerHistoryLog")] 
+    public class CustomerHistoryLog
     {
         [Key]
         public int Id { get; set; }
+
+        [Required]
+        public int CustomerId { get; set; }
 
         [Required]
         public int CompanyId { get; set; }
@@ -19,44 +23,39 @@ namespace InsuraNova.Models
         public int CustomerTypeId { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [MaxLength(50)]
         public string CustomerName { get; set; }
 
-        [StringLength(50)]
-        public string IdentificationNo { get; set; }
+        [MaxLength(50)]
+        public string? IdentificationNo { get; set; }
 
-        [StringLength(50)]
+        [Required]
+        [MaxLength(50)]
         public string FullName { get; set; }
 
-        [StringLength(50)]
+        [Required]
+        [MaxLength(50)]
         public string ContactNo { get; set; }
 
-        [StringLength(50)]
-        public string WhatsAppNo { get; set; }
+        [MaxLength(50)]
+        public string? WhatsAppNo { get; set; }
 
-        [StringLength(50)]
-        [EmailAddress]
-        public string EmailAddress { get; set; }
+        [MaxLength(50)]
+        public string? EmailAddress { get; set; }
 
+        [Required]
         public int GenderTypeId { get; set; }
 
-        //[Column(TypeName = "date")]
+        [Required]
         public DateTime DateOfBirth { get; set; }
 
+        [Required]
         public int RecordStatusId { get; set; }
 
-        public int EnteredBy { get; set; }
-
-        //[Column(TypeName = "date")]
+        public int? EnteredBy { get; set; }
         public DateTime? EnteredDate { get; set; }
 
         public int? ModifiedBy { get; set; }
-
-        //[Column(TypeName = "date")]
         public DateTime? ModifiedDate { get; set; }
-
-        public bool IsActive { get; set; } = true;
-
-
     }
 }

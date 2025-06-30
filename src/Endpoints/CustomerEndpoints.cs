@@ -92,29 +92,17 @@ namespace InsuraNova.Endpoints
                         return Results.BadRequest(ResponseHelper.CreateFailureResponse<object>(ApiAction.Updated, $"Validation failed: {errors}"));
                     }
 
-                    var existingCustomer = await mediator.Send(new GetCustomerByIdQuery(id));
-                    if (existingCustomer == null)
-                    {
-                        return Results.NotFound(ResponseHelper.CreateNotFoundResponse<Customer>(ApiAction.Updated, ApplicationMessages.EntityNotFoundMessage));
-                    }
+                    //var existingCustomer = await mediator.Send(new GetCustomerByIdQuery(id));
+                    //if (existingCustomer == null)
+                    //{
+                     //   return Results.NotFound(ResponseHelper.CreateNotFoundResponse<Customer>(ApiAction.Updated, ApplicationMessages.EntityNotFoundMessage));
+                    //}
 
+                   
 
-                    existingCustomer.CompanyId = customer.CompanyId;
-                    existingCustomer.CustomerIdentificationTypeId = customer.CustomerIdentificationTypeId;
-                    existingCustomer.CustomerTypeId = customer.CustomerTypeId;
-                    existingCustomer.CustomerName = customer.CustomerName;
-                    existingCustomer.IdentificationNo = customer.IdentificationNo;
-                    existingCustomer.FullName = customer.FullName;
-                    existingCustomer.ContactNo = customer.ContactNo;
-                    existingCustomer.WhatsAppNo = customer.WhatsAppNo;
-                    existingCustomer.EmailAddress = customer.EmailAddress;
-                    existingCustomer.GenderTypeId = customer.GenderTypeId;
-                    existingCustomer.DateOfBirth = customer.DateOfBirth;
-                    existingCustomer.RecordStatusId = customer.RecordStatusId;
+                    JwtHelper.InitializeUpdateMetadata(context, customer);
 
-                    JwtHelper.InitializeUpdateMetadata(context, existingCustomer);
-
-                    var updatedCustomer = await mediator.Send(new UpdateCustomerCommand(existingCustomer));
+                    var updatedCustomer = await mediator.Send(new UpdateCustomerCommand(id, customer));
                     return Results.Ok(ResponseHelper.CreateSuccessResponse(updatedCustomer, ApiAction.Updated));
                 }
                 catch (Exception ex)

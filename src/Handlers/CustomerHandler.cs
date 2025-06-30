@@ -14,7 +14,7 @@ namespace InsuraNova.Handlers
 
     // Commands
     public record AddCustomerCommand(Customer Customer) : IRequest<Customer>;
-    public record UpdateCustomerCommand(Customer Customer) : IRequest<Customer>;
+    public record UpdateCustomerCommand(int Id, Customer Customer) : IRequest<Customer>;
     public record DeleteCustomerCommand(int Id) : IRequest<bool>;
 
     // Handlers
@@ -74,7 +74,7 @@ namespace InsuraNova.Handlers
 
         public async Task<Customer> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
-            return await _customerService.UpdateCustomerAsync(request.Customer);
+            return await _customerService.UpdateCustomerAsync(request.Id, request.Customer);
         }
     }
 

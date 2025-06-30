@@ -88,9 +88,12 @@ builder.Services.AddSingleton(mapper);
 // Add Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
 
 
 // Add Services
+builder.Services.AddScoped<ICustomerHistoryLogService, CustomerHistoryLogService>();
 builder.Services.AddScoped<ITokenBlacklistService, TokenBlacklistService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
