@@ -12,7 +12,7 @@ namespace InsuraNova.Handlers
     public record AddUserCommand(UserProfile User) : IRequest<UserProfile>;
     public record UpdateUserCommand(UserProfile User) : IRequest<UserProfile>;
     public record DeleteUserCommand(int Id) : IRequest<bool>;
-    public record ForgotPasswordCommand(string Email) : IRequest<bool>;
+    //public record ForgotPasswordCommand(string Email) : IRequest<bool>;
 
 
     // Handlers

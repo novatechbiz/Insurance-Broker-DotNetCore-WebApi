@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
+using InsuraNova.Configurations;
 using InsuraNova.Dto;
 using InsuraNova.Helpers;
 using InsuraNova.Repositories;
 using InsuraNova.Services;
+using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 using System.Security.Claims;
 
 namespace InsuraNova.Handlers
@@ -12,6 +15,8 @@ namespace InsuraNova.Handlers
     public record LoginCommand(LoginRequest LoginRequest) : IRequest<LoginResponse>;
     public record LogoutCommand : IRequest<LogOutResponse>;
     public record RefreshTokenCommand : IRequest<LoginResponse>;
+    public record ForgotPasswordCommand(string Email, string Type) : IRequest<Unit>;
+    public record ResetPasswordCommand(string Token, string NewPassword) : IRequest<Unit>;
 
     // Handlers
     public class LoginHandler(IUserRepository userRepository, IUserService userService, IMapper mapper, IHttpContextAccessor httpContextAccessor, ILogger<LoginHandler> logger)
@@ -58,8 +63,11 @@ namespace InsuraNova.Handlers
                 var token = TokenHelper.GenerateToken(user);
                 var refreshToken = TokenHelper.GenerateRefreshToken(user);
 
-                // Store refresh token in the database or override the existing refresh token
-                var refreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+                // Store refresh token in the database or override the existing refresh token and set expiry time according to RememberMe option
+                var refreshTokenExpiry = loginRequest.RememberMe
+                    ? DateTime.UtcNow.AddDays(30)
+                    : DateTime.UtcNow.AddHours(2);
+
                 await _userService.UpdateRefreshTokenAsync(user.Id, refreshToken, refreshTokenExpiry);
 
                 // Set refresh token cookie
@@ -210,5 +218,80 @@ namespace InsuraNova.Handlers
             }
         }
 
+    }
+
+    public class ForgotPasswordHandler(IUserService userService, IEmailService emailService, IOptions<ResetPasswordUrlConfig> urlConfig, ILogger<ForgotPasswordHandler> logger)
+        : IRequestHandler<ForgotPasswordCommand, Unit>
+    {
+        private readonly IUserService _userService = userService;
+        private readonly IEmailService _emailService = emailService;
+        private readonly IOptions<ResetPasswordUrlConfig> _urlConfig = urlConfig;
+        private readonly ILogger<ForgotPasswordHandler> _logger = logger;
+        public async Task<Unit> Handle(ForgotPasswordCommand request, CancellationToken cancellationToken)
+        {
+            var user = await _userService.GetUserByEmailAsync(request.Email);
+            if (user == null)
+            {
+                _logger.LogWarning("Forgot password request for unknown email: {Email}", request.Email);
+                return Unit.Value; // Avoid revealing whether email exists
+            }
+
+            var token = WebUtility.UrlEncode(Convert.ToBase64String(Guid.NewGuid().ToByteArray()));
+
+            var resetLink = "";
+            if (request.Type == ApplicationTypes.Web)
+            {
+                resetLink = $"{_urlConfig.Value.WebLink}?token={token}";
+                _logger.LogInformation("reset link: {resetLink}", resetLink);
+            }
+            else if (request.Type == ApplicationTypes.Mobile)
+            {
+                resetLink = $"{_urlConfig.Value.MobileLink}?token={token}";
+            }
+            else
+            {
+                _logger.LogWarning("Unsupported type for forgot password: {Type}", request.Type);
+                return Unit.Value;
+            }
+
+            try
+            {
+                await _emailService.SendResetPasswordEmailAsync(user.Email, resetLink);
+
+                // Save the reset token in the database
+                var resetTokenExpiry = DateTime.UtcNow.AddMinutes(10);
+                await _userService.SaveResetTokenAsync(user.Id, token, resetTokenExpiry);
+                _logger.LogInformation("Reset password email sent to: {Email}", user.Email);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error sending reset password email to {Email}", user.Email);
+                throw;
+            }
+
+            return Unit.Value;
+        }
+    }
+
+    public class ResetPasswordHandler(IUserService userService, ILogger<ResetPasswordHandler> logger)
+        : IRequestHandler<ResetPasswordCommand, Unit>
+    {
+        private readonly IUserService _userService = userService;
+        private readonly ILogger<ResetPasswordHandler> _logger = logger;
+        public async Task<Unit> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
+        {
+            var user = await _userService.GetUserByResetTokenAsync(request.Token);
+            if (user == null)
+            {
+                _logger.LogWarning("Reset password request for unknown token: {Token}", request.Token);
+                throw new Exception("Invalid reset token.");
+            }
+
+            // Hash the new password and update it
+            var hashedPassword = PasswordService.HashPassword(request.NewPassword);
+            await _userService.PasswordReset(user.Id, hashedPassword);
+            _logger.LogInformation("Password reset successful for user ID: {UserId}", user.Id);
+            return Unit.Value;
+        }
     }
 }
