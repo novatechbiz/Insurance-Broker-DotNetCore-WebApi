@@ -583,7 +583,7 @@
     <value>Failed to retrieve currencies with ID{0}. See inner exception for details</value>
   </data>
   <data name="FailedToRetrieveEntryTypeByIdMessage" xml:space="preserve">
-    <value>Failed to retrieve entry types with ID{0}. See inner exception for details</value>
+    <value>Failed to retrieve customers with ID{0}. See inner exception for details</value>
   </data>
   <data name="FailedToRetrieveEntryTypesMessage" xml:space="preserve">
     <value>Failed to retrieve entry type. See inner exception for details</value>
@@ -686,5 +686,8 @@
   </data>
   <data name="PasswordResetFailureMessage" xml:space="preserve">
     <value>Failed to reset password</value>
+  </data>
+  <data name="CustomerNotFoundMessage" xml:space="preserve">
+    <value>Customer not found</value>
   </data>
 </root>

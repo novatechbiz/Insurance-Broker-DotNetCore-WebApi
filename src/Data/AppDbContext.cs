@@ -25,6 +25,9 @@ namespace InsuraNova.Data
         public DbSet<SystemFunction> SystemFunctions { get; set; }
         public DbSet<PremiumLine> PremiumLines { get; set; }
         public DbSet<InsuranceCompany> InsuranceCompanies { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<CustomerHistoryLog> CustomerHisrotyLogs { get; set; }
 
 
 

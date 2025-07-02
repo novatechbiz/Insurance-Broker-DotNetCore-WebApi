@@ -124,6 +124,15 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer not found.
+        /// </summary>
+        internal static string CustomerNotFoundMessage {
+            get {
+                return ResourceManager.GetString("CustomerNotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to delete the user with ID {0}.
         /// </summary>
         internal static string DeleteUserFailureMessage {
@@ -835,7 +844,7 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve entry types with ID{0}. See inner exception for details.
+        ///   Looks up a localized string similar to Failed to retrieve customers with ID{0}. See inner exception for details.
         /// </summary>
         internal static string FailedToRetrieveEntryTypeByIdMessage {
             get {

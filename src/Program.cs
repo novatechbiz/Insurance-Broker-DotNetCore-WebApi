@@ -100,11 +100,15 @@ builder.Services.AddSingleton(mapper);
 // Add Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
 
 
 // Add Services
+builder.Services.AddScoped<ICustomerHistoryLogService, CustomerHistoryLogService>();
 builder.Services.AddScoped<ITokenBlacklistService, TokenBlacklistService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IRecordStatusService, RecordStatusService>();
 builder.Services.AddScoped<IInsuranceTypeService, InsuranceTypeService>();
 builder.Services.AddScoped<IEntryTypeService, EntryTypeService>();
@@ -130,6 +134,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<CompanyValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CustomerValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CustomerTypeValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CustomerIdentificationTypeValidator>();
@@ -274,6 +279,7 @@ app.MapSystemFunctionEndpoints();
 app.MapCompanyTypeEndpoints();
 app.MapInsuranceCompanyEndpoints();
 app.MapPremiumLineEndpoints();
+app.MapCustomerEndpoints();
 
 app.Run();
 
