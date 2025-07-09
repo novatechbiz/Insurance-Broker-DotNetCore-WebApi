@@ -21,15 +21,28 @@ namespace InsuraNova.Handlers
     public class GetAllCustomersHandler : IRequestHandler<GetAllCustomersQuery, IEnumerable<Customer>>
     {
         private readonly ICustomerService _customerService;
+        private readonly ICustomerCorrespondenceService _customerCorrespondenceService;
 
-        public GetAllCustomersHandler(ICustomerService customerService)
+        public GetAllCustomersHandler(ICustomerService customerService, ICustomerCorrespondenceService customerCorrespondenceService)
         {
             _customerService = customerService;
+            _customerCorrespondenceService = customerCorrespondenceService;
         }
 
         public async Task<IEnumerable<Customer>> Handle(GetAllCustomersQuery request, CancellationToken cancellationToken)
         {
-            return await _customerService.GetCustomersAsync();
+            var customerCorrespondenceList = new List<CustomerCorrespondence>();
+            var customers = await _customerService.GetCustomersAsync();
+            foreach (var customer in customers)
+            {
+                // Fetch and attach customer correspondences
+                var customerCorrespondences = await _customerCorrespondenceService.GetCustomerCorrespondenceByCustomerIdAsync(customer.Id);
+                if (customerCorrespondences != null)
+                {
+                    customerCorrespondenceList.AddRange(customerCorrespondences);
+                }
+            }
+            return customers;
         }
     }
 
