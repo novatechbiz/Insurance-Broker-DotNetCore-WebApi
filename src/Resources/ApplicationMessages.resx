@@ -505,7 +505,7 @@
     <value>Failed to retrieve customerType with ID {0}. See inner exception for details</value>
   </data>
   <data name="FailedToAddCustomerTypeMessage" xml:space="preserve">
-    <value>Failed to add the Customer. See inner exception for details</value>
+    <value>Failed to add the Customer type. See inner exception for details</value>
   </data>
   <data name="FailedToUpdateCustomerTypeMessage" xml:space="preserve">
     <value>Failed to update the customerType. See inner exception for details</value>
@@ -670,7 +670,7 @@
     <value>Failed to retrieve customer with ID {0}. See inner exception for details</value>
   </data>
   <data name="FailedToAddCustomerMessage" xml:space="preserve">
-    <value>Failed to add the customer. See inner exception for details</value>
+    <value>Failed to add the Customer. See inner exception for details</value>
   </data>
   <data name="FailedToUpdateCustomerMessage" xml:space="preserve">
     <value>Failed to update customer. See inner exception for details</value>
@@ -689,5 +689,14 @@
   </data>
   <data name="CustomerNotFoundMessage" xml:space="preserve">
     <value>Customer not found</value>
+  </data>
+  <data name="FailedToAddCustomerCorrespondenceMessage" xml:space="preserve">
+    <value>Failed to add Customer correspondence. See inner exception for details</value>
+  </data>
+  <data name="FailedToRetrieveCustomerCorrespondenceByIdMessage" xml:space="preserve">
+    <value>Failed to retrieve Customer correspondence with Id. See inner exception</value>
+  </data>
+  <data name="FailedToRetrieveCustomerCorrespondenceByCustomerIdMessage" xml:space="preserve">
+    <value>Failed to retrieve Customer correspondence by customer Id message</value>
   </data>
 </root>

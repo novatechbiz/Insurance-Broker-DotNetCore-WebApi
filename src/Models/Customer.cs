@@ -57,6 +57,7 @@ namespace InsuraNova.Models
 
         public bool IsActive { get; set; } = true;
 
+        public ICollection<CustomerCorrespondence>? CustomerCorrespondences  { get; set; } = new List<CustomerCorrespondence>();
 
     }
 }

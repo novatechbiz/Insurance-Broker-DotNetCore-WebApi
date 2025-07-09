@@ -250,7 +250,16 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to add the customer. See inner exception for details.
+        ///   Looks up a localized string similar to Failed to add Customer correspondence. See inner exception for details.
+        /// </summary>
+        internal static string FailedToAddCustomerCorrespondenceMessage {
+            get {
+                return ResourceManager.GetString("FailedToAddCustomerCorrespondenceMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to add the Customer. See inner exception for details.
         /// </summary>
         internal static string FailedToAddCustomerMessage {
             get {
@@ -259,7 +268,7 @@ namespace InsuraNova.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to add the Customer. See inner exception for details.
+        ///   Looks up a localized string similar to Failed to add the Customer type. See inner exception for details.
         /// </summary>
         internal static string FailedToAddCustomerTypeMessage {
             get {
@@ -795,6 +804,24 @@ namespace InsuraNova.Resources {
         internal static string FailedToRetrieveCustomerByIdMessage {
             get {
                 return ResourceManager.GetString("FailedToRetrieveCustomerByIdMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve Customer correspondence by customer Id message.
+        /// </summary>
+        internal static string FailedToRetrieveCustomerCorrespondenceByCustomerIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveCustomerCorrespondenceByCustomerIdMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve Customer correspondence with Id. See inner exception.
+        /// </summary>
+        internal static string FailedToRetrieveCustomerCorrespondenceByIdMessage {
+            get {
+                return ResourceManager.GetString("FailedToRetrieveCustomerCorrespondenceByIdMessage", resourceCulture);
             }
         }
         
