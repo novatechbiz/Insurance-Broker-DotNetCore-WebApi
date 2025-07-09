@@ -101,6 +101,7 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerCorrespondenceRepository, CustomerCorrespondenceRepository>();
 
 
 
@@ -126,6 +127,7 @@ builder.Services.AddScoped<ICompanyTypeService, CompanyTypeService>();
 builder.Services.AddScoped<IInsuranceCompanyService, InsuranceCompanyService>();
 builder.Services.AddScoped<ISystemFunctionService, SystemFunctionService>();
 builder.Services.AddScoped<IPremiumLineService, PremiumLineService>();
+builder.Services.AddScoped<ICustomerCorrespondenceService, CustomerCorrespondenceService>();
 
 
 // Correctly register MediatR
@@ -237,11 +239,13 @@ var app = builder.Build();
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Use Rate Limiting middleware
 app.UseIpRateLimiting();
